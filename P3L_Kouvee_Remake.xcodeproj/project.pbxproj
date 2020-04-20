@@ -3,27 +3,47 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DA090765F1638C9459F4B70 /* Pods_P3L_Kouvee_Remake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23869D0AF4F6D5EC75B545EA /* Pods_P3L_Kouvee_Remake.framework */; };
 		842C022D244DC36800CA2BF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C022C244DC36800CA2BF5 /* AppDelegate.swift */; };
 		842C022F244DC36800CA2BF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C022E244DC36800CA2BF5 /* SceneDelegate.swift */; };
-		842C0231244DC36800CA2BF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C0230244DC36800CA2BF5 /* ViewController.swift */; };
+		842C0231244DC36800CA2BF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C0230244DC36800CA2BF5 /* LoginViewController.swift */; };
 		842C0234244DC36800CA2BF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842C0232244DC36800CA2BF5 /* Main.storyboard */; };
 		842C0236244DC36B00CA2BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842C0235244DC36B00CA2BF5 /* Assets.xcassets */; };
 		842C0239244DC36B00CA2BF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842C0237244DC36B00CA2BF5 /* LaunchScreen.storyboard */; };
+		842C0244244DCE5200CA2BF5 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C0243244DCE5200CA2BF5 /* Customer.swift */; };
+		842C0247244DCFAF00CA2BF5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C0245244DCFAF00CA2BF5 /* TableViewCell.swift */; };
+		842C0248244DCFAF00CA2BF5 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842C0246244DCFAF00CA2BF5 /* TableViewCell.xib */; };
+		842C024B244DD73000CA2BF5 /* CustomerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C024A244DD73000CA2BF5 /* CustomerManager.swift */; };
+		842C024D244DD75200CA2BF5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C024C244DD75200CA2BF5 /* Constant.swift */; };
+		842C0250244DDFF400CA2BF5 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C024F244DDFF400CA2BF5 /* Login.swift */; };
+		842C0252244DE02600CA2BF5 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C0251244DE02600CA2BF5 /* LoginManager.swift */; };
+		842C0256244E040500CA2BF5 /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C0255244E040500CA2BF5 /* CustomerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23869D0AF4F6D5EC75B545EA /* Pods_P3L_Kouvee_Remake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_P3L_Kouvee_Remake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		645D7A488FFC6B5493A049EE /* Pods-P3L_Kouvee_Remake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-P3L_Kouvee_Remake.release.xcconfig"; path = "Target Support Files/Pods-P3L_Kouvee_Remake/Pods-P3L_Kouvee_Remake.release.xcconfig"; sourceTree = "<group>"; };
 		842C0229244DC36800CA2BF5 /* P3L_Kouvee_Remake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P3L_Kouvee_Remake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842C022C244DC36800CA2BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		842C022E244DC36800CA2BF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		842C0230244DC36800CA2BF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		842C0230244DC36800CA2BF5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		842C0233244DC36800CA2BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		842C0235244DC36B00CA2BF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		842C0238244DC36B00CA2BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		842C023A244DC36B00CA2BF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842C0243244DCE5200CA2BF5 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		842C0245244DCFAF00CA2BF5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		842C0246244DCFAF00CA2BF5 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		842C024A244DD73000CA2BF5 /* CustomerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerManager.swift; sourceTree = "<group>"; };
+		842C024C244DD75200CA2BF5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		842C024F244DDFF400CA2BF5 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		842C0251244DE02600CA2BF5 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		842C0255244E040500CA2BF5 /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
+		B556E20DF09FEEFD248DB420 /* Pods-P3L_Kouvee_Remake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-P3L_Kouvee_Remake.debug.xcconfig"; path = "Target Support Files/Pods-P3L_Kouvee_Remake/Pods-P3L_Kouvee_Remake.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA090765F1638C9459F4B70 /* Pods_P3L_Kouvee_Remake.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10E80463D5555609807A1B5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23869D0AF4F6D5EC75B545EA /* Pods_P3L_Kouvee_Remake.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		842C0220244DC36800CA2BF5 = {
 			isa = PBXGroup;
 			children = (
 				842C022B244DC36800CA2BF5 /* P3L_Kouvee_Remake */,
 				842C022A244DC36800CA2BF5 /* Products */,
+				B6580A09FF6979897F4F5922 /* Pods */,
+				10E80463D5555609807A1B5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +87,80 @@
 		842C022B244DC36800CA2BF5 /* P3L_Kouvee_Remake */ = {
 			isa = PBXGroup;
 			children = (
+				842C024E244DDFDC00CA2BF5 /* Login */,
+				842C0242244DCD5300CA2BF5 /* Model */,
+				842C0240244DCD2C00CA2BF5 /* Controller */,
+				842C0241244DCD4B00CA2BF5 /* View */,
 				842C022C244DC36800CA2BF5 /* AppDelegate.swift */,
 				842C022E244DC36800CA2BF5 /* SceneDelegate.swift */,
-				842C0230244DC36800CA2BF5 /* ViewController.swift */,
-				842C0232244DC36800CA2BF5 /* Main.storyboard */,
 				842C0235244DC36B00CA2BF5 /* Assets.xcassets */,
 				842C0237244DC36B00CA2BF5 /* LaunchScreen.storyboard */,
 				842C023A244DC36B00CA2BF5 /* Info.plist */,
+				842C024C244DD75200CA2BF5 /* Constant.swift */,
 			);
 			path = P3L_Kouvee_Remake;
+			sourceTree = "<group>";
+		};
+		842C0240244DCD2C00CA2BF5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				842C0257244E040900CA2BF5 /* Customer */,
+				842C0230244DC36800CA2BF5 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		842C0241244DCD4B00CA2BF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				842C0232244DC36800CA2BF5 /* Main.storyboard */,
+				842C0249244DCFB400CA2BF5 /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		842C0242244DCD5300CA2BF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				842C0243244DCE5200CA2BF5 /* Customer.swift */,
+				842C024A244DD73000CA2BF5 /* CustomerManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		842C0249244DCFB400CA2BF5 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				842C0245244DCFAF00CA2BF5 /* TableViewCell.swift */,
+				842C0246244DCFAF00CA2BF5 /* TableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		842C024E244DDFDC00CA2BF5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				842C024F244DDFF400CA2BF5 /* Login.swift */,
+				842C0251244DE02600CA2BF5 /* LoginManager.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		842C0257244E040900CA2BF5 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				842C0255244E040500CA2BF5 /* CustomerViewController.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		B6580A09FF6979897F4F5922 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B556E20DF09FEEFD248DB420 /* Pods-P3L_Kouvee_Remake.debug.xcconfig */,
+				645D7A488FFC6B5493A049EE /* Pods-P3L_Kouvee_Remake.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 842C023D244DC36B00CA2BF5 /* Build configuration list for PBXNativeTarget "P3L_Kouvee_Remake" */;
 			buildPhases = (
+				E7AFFC92EF55D87C77E760A8 /* [CP] Check Pods Manifest.lock */,
 				842C0225244DC36800CA2BF5 /* Sources */,
 				842C0226244DC36800CA2BF5 /* Frameworks */,
 				842C0227244DC36800CA2BF5 /* Resources */,
+				80321D356BAACEAEA1C9898A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				842C0239244DC36B00CA2BF5 /* LaunchScreen.storyboard in Resources */,
+				842C0248244DCFAF00CA2BF5 /* TableViewCell.xib in Resources */,
 				842C0236244DC36B00CA2BF5 /* Assets.xcassets in Resources */,
 				842C0234244DC36800CA2BF5 /* Main.storyboard in Resources */,
 			);
@@ -133,14 +232,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		80321D356BAACEAEA1C9898A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-P3L_Kouvee_Remake/Pods-P3L_Kouvee_Remake-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-P3L_Kouvee_Remake/Pods-P3L_Kouvee_Remake-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-P3L_Kouvee_Remake/Pods-P3L_Kouvee_Remake-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7AFFC92EF55D87C77E760A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-P3L_Kouvee_Remake-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		842C0225244DC36800CA2BF5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				842C0231244DC36800CA2BF5 /* ViewController.swift in Sources */,
+				842C024D244DD75200CA2BF5 /* Constant.swift in Sources */,
+				842C0247244DCFAF00CA2BF5 /* TableViewCell.swift in Sources */,
+				842C0256244E040500CA2BF5 /* CustomerViewController.swift in Sources */,
+				842C0231244DC36800CA2BF5 /* LoginViewController.swift in Sources */,
 				842C022D244DC36800CA2BF5 /* AppDelegate.swift in Sources */,
 				842C022F244DC36800CA2BF5 /* SceneDelegate.swift in Sources */,
+				842C0252244DE02600CA2BF5 /* LoginManager.swift in Sources */,
+				842C0244244DCE5200CA2BF5 /* Customer.swift in Sources */,
+				842C024B244DD73000CA2BF5 /* CustomerManager.swift in Sources */,
+				842C0250244DDFF400CA2BF5 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +430,7 @@
 		};
 		842C023E244DC36B00CA2BF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B556E20DF09FEEFD248DB420 /* Pods-P3L_Kouvee_Remake.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +448,7 @@
 		};
 		842C023F244DC36B00CA2BF5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 645D7A488FFC6B5493A049EE /* Pods-P3L_Kouvee_Remake.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
