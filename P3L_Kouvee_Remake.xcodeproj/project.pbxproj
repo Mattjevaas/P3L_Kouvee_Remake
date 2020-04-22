@@ -22,6 +22,24 @@
 		842C0250244DDFF400CA2BF5 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C024F244DDFF400CA2BF5 /* Login.swift */; };
 		842C0252244DE02600CA2BF5 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C0251244DE02600CA2BF5 /* LoginManager.swift */; };
 		842C0256244E040500CA2BF5 /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C0255244E040500CA2BF5 /* CustomerViewController.swift */; };
+		842C0259244E062300CA2BF5 /* CustomerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C0258244E062300CA2BF5 /* CustomerDetailViewController.swift */; };
+		84ED2EA4244EB8BC00C8A107 /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EA3244EB8BC00C8A107 /* Supplier.swift */; };
+		84ED2EA6244EB8F800C8A107 /* SupplierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EA5244EB8F800C8A107 /* SupplierManager.swift */; };
+		84ED2EA8244EBA8600C8A107 /* SupplierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EA7244EBA8600C8A107 /* SupplierViewController.swift */; };
+		84ED2EAA244EBA9500C8A107 /* SupplierDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EA9244EBA9500C8A107 /* SupplierDetailViewController.swift */; };
+		84ED2EAF244F2C7A00C8A107 /* JenisHewan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EAE244F2C7A00C8A107 /* JenisHewan.swift */; };
+		84ED2EB1244F2C8700C8A107 /* JenisHewanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EB0244F2C8700C8A107 /* JenisHewanManager.swift */; };
+		84ED2EB3244F2C9400C8A107 /* UkuranHewan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EB2244F2C9400C8A107 /* UkuranHewan.swift */; };
+		84ED2EB5244F2C9D00C8A107 /* UkuranHewanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EB4244F2C9D00C8A107 /* UkuranHewanManager.swift */; };
+		84ED2EB7244F2CA600C8A107 /* Hewan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EB6244F2CA600C8A107 /* Hewan.swift */; };
+		84ED2EB9244F2CB300C8A107 /* HewanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EB8244F2CB300C8A107 /* HewanManager.swift */; };
+		84ED2EBC244F31CF00C8A107 /* HewanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EBB244F31CF00C8A107 /* HewanViewController.swift */; };
+		84ED2EBE244F31DC00C8A107 /* HewanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EBD244F31DC00C8A107 /* HewanDetailViewController.swift */; };
+		84ED2EC0244F39DF00C8A107 /* HewanDetailExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EBF244F39DF00C8A107 /* HewanDetailExtension.swift */; };
+		84ED2EC3244F457100C8A107 /* UkuranHewanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EC2244F457100C8A107 /* UkuranHewanViewController.swift */; };
+		84ED2EC5244F458E00C8A107 /* UkuranHewanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EC4244F458E00C8A107 /* UkuranHewanDetailViewController.swift */; };
+		84ED2EC8244F4D6600C8A107 /* JenisHewanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EC7244F4D6600C8A107 /* JenisHewanViewController.swift */; };
+		84ED2ECA244F4D7300C8A107 /* JenisHewanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EC9244F4D7300C8A107 /* JenisHewanDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +61,24 @@
 		842C024F244DDFF400CA2BF5 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		842C0251244DE02600CA2BF5 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		842C0255244E040500CA2BF5 /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
+		842C0258244E062300CA2BF5 /* CustomerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailViewController.swift; sourceTree = "<group>"; };
+		84ED2EA3244EB8BC00C8A107 /* Supplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supplier.swift; sourceTree = "<group>"; };
+		84ED2EA5244EB8F800C8A107 /* SupplierManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierManager.swift; sourceTree = "<group>"; };
+		84ED2EA7244EBA8600C8A107 /* SupplierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierViewController.swift; sourceTree = "<group>"; };
+		84ED2EA9244EBA9500C8A107 /* SupplierDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierDetailViewController.swift; sourceTree = "<group>"; };
+		84ED2EAE244F2C7A00C8A107 /* JenisHewan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisHewan.swift; sourceTree = "<group>"; };
+		84ED2EB0244F2C8700C8A107 /* JenisHewanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisHewanManager.swift; sourceTree = "<group>"; };
+		84ED2EB2244F2C9400C8A107 /* UkuranHewan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UkuranHewan.swift; sourceTree = "<group>"; };
+		84ED2EB4244F2C9D00C8A107 /* UkuranHewanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UkuranHewanManager.swift; sourceTree = "<group>"; };
+		84ED2EB6244F2CA600C8A107 /* Hewan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hewan.swift; sourceTree = "<group>"; };
+		84ED2EB8244F2CB300C8A107 /* HewanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HewanManager.swift; sourceTree = "<group>"; };
+		84ED2EBB244F31CF00C8A107 /* HewanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HewanViewController.swift; sourceTree = "<group>"; };
+		84ED2EBD244F31DC00C8A107 /* HewanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HewanDetailViewController.swift; sourceTree = "<group>"; };
+		84ED2EBF244F39DF00C8A107 /* HewanDetailExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HewanDetailExtension.swift; sourceTree = "<group>"; };
+		84ED2EC2244F457100C8A107 /* UkuranHewanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UkuranHewanViewController.swift; sourceTree = "<group>"; };
+		84ED2EC4244F458E00C8A107 /* UkuranHewanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UkuranHewanDetailViewController.swift; sourceTree = "<group>"; };
+		84ED2EC7244F4D6600C8A107 /* JenisHewanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisHewanViewController.swift; sourceTree = "<group>"; };
+		84ED2EC9244F4D7300C8A107 /* JenisHewanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisHewanDetailViewController.swift; sourceTree = "<group>"; };
 		B556E20DF09FEEFD248DB420 /* Pods-P3L_Kouvee_Remake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-P3L_Kouvee_Remake.debug.xcconfig"; path = "Target Support Files/Pods-P3L_Kouvee_Remake/Pods-P3L_Kouvee_Remake.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +123,6 @@
 		842C022B244DC36800CA2BF5 /* P3L_Kouvee_Remake */ = {
 			isa = PBXGroup;
 			children = (
-				842C024E244DDFDC00CA2BF5 /* Login */,
 				842C0242244DCD5300CA2BF5 /* Model */,
 				842C0240244DCD2C00CA2BF5 /* Controller */,
 				842C0241244DCD4B00CA2BF5 /* View */,
@@ -104,6 +139,8 @@
 		842C0240244DCD2C00CA2BF5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				84ED2EBA244F31C100C8A107 /* Hewan */,
+				84ED2EA1244EB89B00C8A107 /* Supplier */,
 				842C0257244E040900CA2BF5 /* Customer */,
 				842C0230244DC36800CA2BF5 /* LoginViewController.swift */,
 			);
@@ -122,8 +159,10 @@
 		842C0242244DCD5300CA2BF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				842C0243244DCE5200CA2BF5 /* Customer.swift */,
-				842C024A244DD73000CA2BF5 /* CustomerManager.swift */,
+				84ED2EAB244ED0A400C8A107 /* Hewan */,
+				84ED2EA2244EB8A300C8A107 /* Supplier */,
+				84ED2EA0244EB86900C8A107 /* Customer */,
+				842C024E244DDFDC00CA2BF5 /* Login */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,8 +189,95 @@
 			isa = PBXGroup;
 			children = (
 				842C0255244E040500CA2BF5 /* CustomerViewController.swift */,
+				842C0258244E062300CA2BF5 /* CustomerDetailViewController.swift */,
 			);
 			path = Customer;
+			sourceTree = "<group>";
+		};
+		84ED2EA0244EB86900C8A107 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				842C0243244DCE5200CA2BF5 /* Customer.swift */,
+				842C024A244DD73000CA2BF5 /* CustomerManager.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		84ED2EA1244EB89B00C8A107 /* Supplier */ = {
+			isa = PBXGroup;
+			children = (
+				84ED2EA7244EBA8600C8A107 /* SupplierViewController.swift */,
+				84ED2EA9244EBA9500C8A107 /* SupplierDetailViewController.swift */,
+			);
+			path = Supplier;
+			sourceTree = "<group>";
+		};
+		84ED2EA2244EB8A300C8A107 /* Supplier */ = {
+			isa = PBXGroup;
+			children = (
+				84ED2EA3244EB8BC00C8A107 /* Supplier.swift */,
+				84ED2EA5244EB8F800C8A107 /* SupplierManager.swift */,
+			);
+			path = Supplier;
+			sourceTree = "<group>";
+		};
+		84ED2EAB244ED0A400C8A107 /* Hewan */ = {
+			isa = PBXGroup;
+			children = (
+				84ED2EAD244ED0B200C8A107 /* Jenis */,
+				84ED2EAC244ED0AC00C8A107 /* Ukuran */,
+				84ED2EB6244F2CA600C8A107 /* Hewan.swift */,
+				84ED2EB8244F2CB300C8A107 /* HewanManager.swift */,
+			);
+			path = Hewan;
+			sourceTree = "<group>";
+		};
+		84ED2EAC244ED0AC00C8A107 /* Ukuran */ = {
+			isa = PBXGroup;
+			children = (
+				84ED2EB2244F2C9400C8A107 /* UkuranHewan.swift */,
+				84ED2EB4244F2C9D00C8A107 /* UkuranHewanManager.swift */,
+			);
+			path = Ukuran;
+			sourceTree = "<group>";
+		};
+		84ED2EAD244ED0B200C8A107 /* Jenis */ = {
+			isa = PBXGroup;
+			children = (
+				84ED2EAE244F2C7A00C8A107 /* JenisHewan.swift */,
+				84ED2EB0244F2C8700C8A107 /* JenisHewanManager.swift */,
+			);
+			path = Jenis;
+			sourceTree = "<group>";
+		};
+		84ED2EBA244F31C100C8A107 /* Hewan */ = {
+			isa = PBXGroup;
+			children = (
+				84ED2EC6244F4D5900C8A107 /* Jenis */,
+				84ED2EC1244F454D00C8A107 /* Ukuran */,
+				84ED2EBB244F31CF00C8A107 /* HewanViewController.swift */,
+				84ED2EBD244F31DC00C8A107 /* HewanDetailViewController.swift */,
+				84ED2EBF244F39DF00C8A107 /* HewanDetailExtension.swift */,
+			);
+			path = Hewan;
+			sourceTree = "<group>";
+		};
+		84ED2EC1244F454D00C8A107 /* Ukuran */ = {
+			isa = PBXGroup;
+			children = (
+				84ED2EC2244F457100C8A107 /* UkuranHewanViewController.swift */,
+				84ED2EC4244F458E00C8A107 /* UkuranHewanDetailViewController.swift */,
+			);
+			path = Ukuran;
+			sourceTree = "<group>";
+		};
+		84ED2EC6244F4D5900C8A107 /* Jenis */ = {
+			isa = PBXGroup;
+			children = (
+				84ED2EC7244F4D6600C8A107 /* JenisHewanViewController.swift */,
+				84ED2EC9244F4D7300C8A107 /* JenisHewanDetailViewController.swift */,
+			);
+			path = Jenis;
 			sourceTree = "<group>";
 		};
 		B6580A09FF6979897F4F5922 /* Pods */ = {
@@ -279,15 +405,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84ED2EBE244F31DC00C8A107 /* HewanDetailViewController.swift in Sources */,
 				842C024D244DD75200CA2BF5 /* Constant.swift in Sources */,
+				84ED2EAA244EBA9500C8A107 /* SupplierDetailViewController.swift in Sources */,
+				84ED2EC8244F4D6600C8A107 /* JenisHewanViewController.swift in Sources */,
+				84ED2EA4244EB8BC00C8A107 /* Supplier.swift in Sources */,
 				842C0247244DCFAF00CA2BF5 /* TableViewCell.swift in Sources */,
 				842C0256244E040500CA2BF5 /* CustomerViewController.swift in Sources */,
+				842C0259244E062300CA2BF5 /* CustomerDetailViewController.swift in Sources */,
 				842C0231244DC36800CA2BF5 /* LoginViewController.swift in Sources */,
+				84ED2EAF244F2C7A00C8A107 /* JenisHewan.swift in Sources */,
+				84ED2EB5244F2C9D00C8A107 /* UkuranHewanManager.swift in Sources */,
+				84ED2EB1244F2C8700C8A107 /* JenisHewanManager.swift in Sources */,
+				84ED2EBC244F31CF00C8A107 /* HewanViewController.swift in Sources */,
+				84ED2EB3244F2C9400C8A107 /* UkuranHewan.swift in Sources */,
 				842C022D244DC36800CA2BF5 /* AppDelegate.swift in Sources */,
 				842C022F244DC36800CA2BF5 /* SceneDelegate.swift in Sources */,
+				84ED2EB7244F2CA600C8A107 /* Hewan.swift in Sources */,
+				84ED2EC0244F39DF00C8A107 /* HewanDetailExtension.swift in Sources */,
+				84ED2EC5244F458E00C8A107 /* UkuranHewanDetailViewController.swift in Sources */,
+				84ED2EA8244EBA8600C8A107 /* SupplierViewController.swift in Sources */,
 				842C0252244DE02600CA2BF5 /* LoginManager.swift in Sources */,
+				84ED2EA6244EB8F800C8A107 /* SupplierManager.swift in Sources */,
 				842C0244244DCE5200CA2BF5 /* Customer.swift in Sources */,
 				842C024B244DD73000CA2BF5 /* CustomerManager.swift in Sources */,
+				84ED2EB9244F2CB300C8A107 /* HewanManager.swift in Sources */,
+				84ED2ECA244F4D7300C8A107 /* JenisHewanDetailViewController.swift in Sources */,
+				84ED2EC3244F457100C8A107 /* UkuranHewanViewController.swift in Sources */,
 				842C0250244DDFF400CA2BF5 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

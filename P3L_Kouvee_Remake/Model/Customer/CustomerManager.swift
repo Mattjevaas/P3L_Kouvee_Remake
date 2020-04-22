@@ -48,6 +48,10 @@ struct CustomerManager
                     self.delegate?.didMessage(title: "Error!",message: "Error While Fetching Data !")
                 }
             }
+            else
+            {
+                self.delegate?.didMessage(title: "Error", message: "Network Error !")
+            }
         }
     }
     
@@ -66,6 +70,10 @@ struct CustomerManager
                 if self.parseJson(data: data) != nil
                 {
                     self.delegate?.didMessage(title: "Success", message: "Success Store Data!")
+                }
+                else
+                {
+                    self.delegate?.didMessage(title: "Error", message: "Failed Store Data!")
                 }
             }
             else
@@ -91,10 +99,14 @@ struct CustomerManager
                 {
                     self.delegate?.didMessage(title: "Success", message: "Success Delete Data !")
                 }
+                else
+                {
+                    self.delegate?.didMessage(title: "Error", message: "Failed Delete Data !")
+                }
             }
             else
             {
-                self.delegate?.didMessage(title: "Error", message: "Network Error !")
+                self.delegate?.didMessage(title: "Error", message: "Network Error")
             }
         }
     }

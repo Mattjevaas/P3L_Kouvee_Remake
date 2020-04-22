@@ -12,7 +12,8 @@ import Alamofire
 
 protocol LoginManagerDelegate {
     
-    func didMessage(title: String, message: String)
+    func didSuccess(data: Login)
+    func didError(message: String)
     
 }
 
@@ -34,17 +35,17 @@ struct LoginManager {
                     if(safeData.Status == "Success")
                     {
                         Constant.APIKEY = safeData.Token
-                        self.delegate?.didMessage(title: "Success", message: "Selamat Datang !")
+                        self.delegate?.didSuccess(data: safeData)
                     }
                     else
                     {
-                        self.delegate?.didMessage(title: "Error", message: "Username / Password Salah !")
+                        self.delegate?.didError(message: "Username / Password Salah !")
                     }
                 }
             }
             else
             {
-                self.delegate?.didMessage(title: "Error", message: "Network Error !")
+                self.delegate?.didError(message: "Something Wrong !")
             }
             
         }
@@ -66,7 +67,7 @@ struct LoginManager {
         }
         catch
         {
-            self.delegate?.didMessage(title: "Error", message: "Error Parsing Data !")
+            self.delegate?.didError(message: "Something Wrong !")
             return nil
         }
     }

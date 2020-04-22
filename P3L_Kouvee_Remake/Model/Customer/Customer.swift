@@ -22,6 +22,10 @@ struct CustomerData: Codable
     let alamat: String
     let noTelp: String
     let email: String
+    let created_at: String
+    let edited_at: String?
+    let deleted_at: String?
+    let edited_by: String
 }
 
 struct CustomerDataStore: Codable

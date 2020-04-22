@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var EmailTxt: UITextField!
     @IBOutlet weak var PasswordTxt: UITextField!
@@ -47,16 +47,15 @@ class ViewController: UIViewController {
 
 //MARK: - LoginManagerDelegate
 
-extension ViewController: LoginManagerDelegate
+extension LoginViewController: LoginManagerDelegate
 {
-    func didMessage(title: String, message: String)
-    {
-        Constant.showAlert(title: title, message: message, sender: self, back: false)
-        
-        if(title == "Success")
-        {
-            self.performSegue(withIdentifier: "toCustomer", sender: self)
-        }
+    func didSuccess(data: Login) {
+        performSegue(withIdentifier: "toCustomer", sender: self)
     }
+    
+    func didError(message: String) {
+        Constant.showAlert(title: "Error", message: message, sender: self, back: false)
+    }
+    
     
 }
