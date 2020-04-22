@@ -40,6 +40,10 @@
 		84ED2EC5244F458E00C8A107 /* UkuranHewanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EC4244F458E00C8A107 /* UkuranHewanDetailViewController.swift */; };
 		84ED2EC8244F4D6600C8A107 /* JenisHewanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EC7244F4D6600C8A107 /* JenisHewanViewController.swift */; };
 		84ED2ECA244F4D7300C8A107 /* JenisHewanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EC9244F4D7300C8A107 /* JenisHewanDetailViewController.swift */; };
+		84ED2ECE2450718800C8A107 /* ProdukBarang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2ECD2450718800C8A107 /* ProdukBarang.swift */; };
+		84ED2ED02450719A00C8A107 /* ProdukBarangManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2ECF2450719A00C8A107 /* ProdukBarangManager.swift */; };
+		84ED2ED4245071C600C8A107 /* ProdukBarangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2ED3245071C600C8A107 /* ProdukBarangViewController.swift */; };
+		84ED2ED6245071D700C8A107 /* ProdukBarangDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2ED5245071D700C8A107 /* ProdukBarangDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +83,10 @@
 		84ED2EC4244F458E00C8A107 /* UkuranHewanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UkuranHewanDetailViewController.swift; sourceTree = "<group>"; };
 		84ED2EC7244F4D6600C8A107 /* JenisHewanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisHewanViewController.swift; sourceTree = "<group>"; };
 		84ED2EC9244F4D7300C8A107 /* JenisHewanDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JenisHewanDetailViewController.swift; sourceTree = "<group>"; };
+		84ED2ECD2450718800C8A107 /* ProdukBarang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukBarang.swift; sourceTree = "<group>"; };
+		84ED2ECF2450719A00C8A107 /* ProdukBarangManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukBarangManager.swift; sourceTree = "<group>"; };
+		84ED2ED3245071C600C8A107 /* ProdukBarangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukBarangViewController.swift; sourceTree = "<group>"; };
+		84ED2ED5245071D700C8A107 /* ProdukBarangDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukBarangDetailViewController.swift; sourceTree = "<group>"; };
 		B556E20DF09FEEFD248DB420 /* Pods-P3L_Kouvee_Remake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-P3L_Kouvee_Remake.debug.xcconfig"; path = "Target Support Files/Pods-P3L_Kouvee_Remake/Pods-P3L_Kouvee_Remake.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +147,7 @@
 		842C0240244DCD2C00CA2BF5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				84ED2ED1245071B200C8A107 /* Produk */,
 				84ED2EBA244F31C100C8A107 /* Hewan */,
 				84ED2EA1244EB89B00C8A107 /* Supplier */,
 				842C0257244E040900CA2BF5 /* Customer */,
@@ -159,6 +168,7 @@
 		842C0242244DCD5300CA2BF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84ED2ECB245070BB00C8A107 /* Produk */,
 				84ED2EAB244ED0A400C8A107 /* Hewan */,
 				84ED2EA2244EB8A300C8A107 /* Supplier */,
 				84ED2EA0244EB86900C8A107 /* Customer */,
@@ -278,6 +288,40 @@
 				84ED2EC9244F4D7300C8A107 /* JenisHewanDetailViewController.swift */,
 			);
 			path = Jenis;
+			sourceTree = "<group>";
+		};
+		84ED2ECB245070BB00C8A107 /* Produk */ = {
+			isa = PBXGroup;
+			children = (
+				84ED2ECC2450717500C8A107 /* ProdukBarang */,
+			);
+			path = Produk;
+			sourceTree = "<group>";
+		};
+		84ED2ECC2450717500C8A107 /* ProdukBarang */ = {
+			isa = PBXGroup;
+			children = (
+				84ED2ECD2450718800C8A107 /* ProdukBarang.swift */,
+				84ED2ECF2450719A00C8A107 /* ProdukBarangManager.swift */,
+			);
+			path = ProdukBarang;
+			sourceTree = "<group>";
+		};
+		84ED2ED1245071B200C8A107 /* Produk */ = {
+			isa = PBXGroup;
+			children = (
+				84ED2ED2245071B800C8A107 /* ProdukBarang */,
+			);
+			path = Produk;
+			sourceTree = "<group>";
+		};
+		84ED2ED2245071B800C8A107 /* ProdukBarang */ = {
+			isa = PBXGroup;
+			children = (
+				84ED2ED3245071C600C8A107 /* ProdukBarangViewController.swift */,
+				84ED2ED5245071D700C8A107 /* ProdukBarangDetailViewController.swift */,
+			);
+			path = ProdukBarang;
 			sourceTree = "<group>";
 		};
 		B6580A09FF6979897F4F5922 /* Pods */ = {
@@ -407,8 +451,10 @@
 			files = (
 				84ED2EBE244F31DC00C8A107 /* HewanDetailViewController.swift in Sources */,
 				842C024D244DD75200CA2BF5 /* Constant.swift in Sources */,
+				84ED2ECE2450718800C8A107 /* ProdukBarang.swift in Sources */,
 				84ED2EAA244EBA9500C8A107 /* SupplierDetailViewController.swift in Sources */,
 				84ED2EC8244F4D6600C8A107 /* JenisHewanViewController.swift in Sources */,
+				84ED2ED4245071C600C8A107 /* ProdukBarangViewController.swift in Sources */,
 				84ED2EA4244EB8BC00C8A107 /* Supplier.swift in Sources */,
 				842C0247244DCFAF00CA2BF5 /* TableViewCell.swift in Sources */,
 				842C0256244E040500CA2BF5 /* CustomerViewController.swift in Sources */,
@@ -422,6 +468,7 @@
 				842C022D244DC36800CA2BF5 /* AppDelegate.swift in Sources */,
 				842C022F244DC36800CA2BF5 /* SceneDelegate.swift in Sources */,
 				84ED2EB7244F2CA600C8A107 /* Hewan.swift in Sources */,
+				84ED2ED6245071D700C8A107 /* ProdukBarangDetailViewController.swift in Sources */,
 				84ED2EC0244F39DF00C8A107 /* HewanDetailExtension.swift in Sources */,
 				84ED2EC5244F458E00C8A107 /* UkuranHewanDetailViewController.swift in Sources */,
 				84ED2EA8244EBA8600C8A107 /* SupplierViewController.swift in Sources */,
@@ -433,6 +480,7 @@
 				84ED2ECA244F4D7300C8A107 /* JenisHewanDetailViewController.swift in Sources */,
 				84ED2EC3244F457100C8A107 /* UkuranHewanViewController.swift in Sources */,
 				842C0250244DDFF400CA2BF5 /* Login.swift in Sources */,
+				84ED2ED02450719A00C8A107 /* ProdukBarangManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
