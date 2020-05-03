@@ -1,28 +1,28 @@
 //
-//  SupplierManager.swift
+//  HargaLayananManager.swift
 //  P3L_Kouvee_Remake
 //
-//  Created by Admin on 21/04/20.
+//  Created by Admin on 26/04/20.
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-protocol SupplierManagerDelegate
+protocol HargaLayananManagerDelegate
 {
-    func didFetch(supplier: Supplier)
-    func didMessage(title:String, message: String)
+    func didFetchHargaLayanan(hargalayanan: HargaLayanan)
+    func didMessageHargaLayanan(title:String, message: String)
 }
 
-struct SupplierManager
+struct HargaLayananManager
 {
-    var delegate: SupplierManagerDelegate?
-    let url = "\(Constant.url)/supplier"
+    
+    var delegate: HargaLayananManagerDelegate?
+    let url = "\(Constant.url)/hargalayanan"
     
     func fetch_all()
     {
-        
         let configuration = URLSessionConfiguration.default
         configuration.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
 
@@ -39,73 +39,73 @@ struct SupplierManager
             {
                 if let safeData = self.parseJson(data: data)
                 {
-                    self.delegate?.didFetch(supplier: safeData)
-                    
+                    self.delegate?.didFetchHargaLayanan(hargalayanan: safeData)
+
                 }
                 else
                 {
-                    self.delegate?.didMessage(title: "Error!",message: "Error While Fetching Data !")
+                    self.delegate?.didMessageHargaLayanan(title: "Error",message: "Failed Fetching Data !")
                 }
             }
             else
             {
-                self.delegate?.didMessage(title: "Error", message: "Network Error !")
+                self.delegate?.didMessageHargaLayanan(title: "Error",message: "Network Error !")
             }
         }
     }
     
-    func store_data(nama: String, alamat: String, telp: String, email: String)
+    func store_data(harga: String, idUkuran: Int, idJenis: Int, idLayanan: Int)
     {
         let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]
         let urls = "\(url)/store"
         
-        let parameter = SupplierDataStore(namaSupplier: nama, alamat: alamat, noTelp: telp, email: email)
-        
+        let parameter = HargaLayananDataStore(hargaLayanan: harga, idUkuranHewan: idUkuran, idJenisHewan: idJenis, idLayanan: idLayanan)
         AF.request(urls, method: .post, parameters: parameter ,headers: header).response { response in
             
+            debugPrint(response)
             if let data = response.data
             {
                 if self.parseJson(data: data) != nil
                 {
-                    self.delegate?.didMessage(title: "Success", message: "Success Store Data !")
+                    self.delegate?.didMessageHargaLayanan(title: "Success",message: "Success Store Data!")
                 }
                 else
                 {
-                    self.delegate?.didMessage(title: "Error", message: "Failed Store Data !")
+                    self.delegate?.didMessageHargaLayanan(title: "Error",message: "Failed Store Data !")
                 }
             }
             else
             {
-                self.delegate?.didMessage(title: "Error", message: "Network Error !")
+                self.delegate?.didMessageHargaLayanan(title: "Error",message: "Network Error !")
             }
             
         }
         
     }
     
-    func edit_data(nama: String, alamat: String, telp: String, email: String,id: Int)
+    func edit_data(harga: String, idUkuran: Int, idJenis: Int, idLayanan: Int, id: Int)
     {
         let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]
         let urls = "\(url)/edit/\(id)"
         
-        let parameter = SupplierDataStore(namaSupplier: nama, alamat: alamat, noTelp: telp, email: email)
-        
+        let parameter = HargaLayananDataStore(hargaLayanan: harga, idUkuranHewan: idUkuran, idJenisHewan: idJenis, idLayanan: idLayanan)
         AF.request(urls, method: .post, parameters: parameter ,headers: header).response { response in
             
+            debugPrint(response)
             if let data = response.data
             {
                 if self.parseJson(data: data) != nil
                 {
-                    self.delegate?.didMessage(title: "Success", message: "Success Edit Data !")
+                    self.delegate?.didMessageHargaLayanan(title: "Success",message: "Success Edit Data!")
                 }
                 else
                 {
-                    self.delegate?.didMessage(title: "Error", message: "Failed Edit Data !")
+                    self.delegate?.didMessageHargaLayanan(title: "Error",message: "Failed Edit Data !")
                 }
             }
             else
             {
-                self.delegate?.didMessage(title: "Error", message: "Network Error !")
+                self.delegate?.didMessageHargaLayanan(title: "Error",message: "Network Error !")
             }
             
         }
@@ -124,34 +124,35 @@ struct SupplierManager
             {
                 if self.parseJson(data: data) != nil
                 {
-                    self.delegate?.didMessage(title: "Success", message: "Success Delete Data !")
+                    self.delegate?.didMessageHargaLayanan(title: "Success", message: "Success Delete Data !")
                 }
                 else
                 {
-                    self.delegate?.didMessage(title: "Error", message: "Failed Delete Data !")
+                    self.delegate?.didMessageHargaLayanan(title: "Error",message: "Failed Delete Data !")
                 }
             }
             else
             {
-                self.delegate?.didMessage(title: "Error", message: "Network Error !")
+                self.delegate?.didMessageHargaLayanan(title: "Error",message: "Network Error !")
             }
         }
     }
     
-    func parseJson(data: Data) -> Supplier?
+    func parseJson(data: Data) -> HargaLayanan?
     {
         let decoder = JSONDecoder()
         
         do
         {
-            let decodedData = try decoder.decode(Supplier.self, from: data)
-            let supplierData = decodedData
+            let decodedData = try decoder.decode(HargaLayanan.self, from: data)
+            let hargalayananData = decodedData
             
-            return supplierData
+            return hargalayananData
         }
         catch{
-            self.delegate?.didMessage(title: "Error", message: "Error While Parsing Data !")
+            self.delegate?.didMessageHargaLayanan(title: "Error",message: "Failed Parsing Data !")
             return nil
         }
     }
 }
+

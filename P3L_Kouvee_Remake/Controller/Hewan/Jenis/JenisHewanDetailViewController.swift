@@ -93,6 +93,10 @@ class JenisHewanDetailViewController: UIViewController {
             {
                 jenisManager.store_data(nama: txtNama.text!)
             }
+            else
+            {
+                jenisManager.edit_data(nama: txtNama.text!,id: jenisData!.idJenisHewan)
+            }
         }
     }
 }

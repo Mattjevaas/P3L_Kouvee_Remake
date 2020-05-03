@@ -54,6 +54,11 @@ class CustomerDetailViewController: UIViewController {
             {
                 customerManager.store_data(nama: txtCustomer.text!, lahir: strDate!, alamat: txtAlamat.text!, telp: txtTelp.text!, email: txtEmail.text!)
             }
+            else
+            {
+                customerManager.edit_data(nama: txtCustomer.text!, lahir: strDate!, alamat: txtAlamat.text!, telp: txtTelp.text!, email: txtEmail.text!, id: dataForSegueCustomer!.idCustomer_Member)
+            }
+            
         }
     }
     

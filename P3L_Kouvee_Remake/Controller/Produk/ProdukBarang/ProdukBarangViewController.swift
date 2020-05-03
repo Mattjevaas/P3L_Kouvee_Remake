@@ -11,9 +11,12 @@ import UIKit
 class ProdukBarangViewController: UIViewController {
     
     @IBOutlet weak var produkBarangTable: UITableView!
+    @IBOutlet weak var trailing: NSLayoutConstraint!
+    @IBOutlet weak var leading: NSLayoutConstraint!
     
     var imagesUrls: URL?
     var arrImages: [UIImage]? = []
+    var menuOut = false
     var filteredProdukBarang: [ProdukBarangData] = []
     var dataProdukBarang: [ProdukBarangData] = []
     var produkBarangDataSegue: ProdukBarangData?
@@ -56,6 +59,23 @@ class ProdukBarangViewController: UIViewController {
         performSegue(withIdentifier: "toAddItem", sender: self)
     }
     
+    @IBAction func btnMenu(_ sender: Any) {
+        
+        if menuOut == false
+        {
+            trailing.constant = 200
+            leading.constant = 200
+            menuOut = true
+        }
+        else
+        {
+            trailing.constant = 0
+            leading.constant = 0
+            menuOut = false
+        }
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {self.view.layoutIfNeeded()}){ (animationComplete) in print("Animation Complete") }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEditItem"
         {

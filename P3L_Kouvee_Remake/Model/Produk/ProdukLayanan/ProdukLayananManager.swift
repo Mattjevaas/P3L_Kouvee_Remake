@@ -1,31 +1,31 @@
 //
-//  SupplierManager.swift
+//  ProdukLayananManager.swift
 //  P3L_Kouvee_Remake
 //
-//  Created by Admin on 21/04/20.
+//  Created by Admin on 26/04/20.
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-protocol SupplierManagerDelegate
+protocol ProdukLayananManagerDelegate
 {
-    func didFetch(supplier: Supplier)
+    func didFetch(produkLayanan: ProdukLayanan)
     func didMessage(title:String, message: String)
 }
 
-struct SupplierManager
+struct ProdukLayananManager
 {
-    var delegate: SupplierManagerDelegate?
-    let url = "\(Constant.url)/supplier"
+    var delegate: ProdukLayananManagerDelegate?
+    let url = "\(Constant.url)/layanan"
     
     func fetch_all()
     {
         
         let configuration = URLSessionConfiguration.default
         configuration.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-
+        
         var req = URLRequest(url: URL(string: url)!)
         req.httpMethod = "GET"
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -39,27 +39,28 @@ struct SupplierManager
             {
                 if let safeData = self.parseJson(data: data)
                 {
-                    self.delegate?.didFetch(supplier: safeData)
+                    self.delegate?.didFetch(produkLayanan: safeData)
                     
                 }
                 else
                 {
-                    self.delegate?.didMessage(title: "Error!",message: "Error While Fetching Data !")
+                    self.delegate?.didMessage(title: "Error",message: "Failed Fetching Data !")
                 }
+                
             }
             else
             {
-                self.delegate?.didMessage(title: "Error", message: "Network Error !")
+                self.delegate?.didMessage(title: "Error",message: "Network Error !")
             }
         }
     }
     
-    func store_data(nama: String, alamat: String, telp: String, email: String)
+    func store_data(nama: String)
     {
         let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]
         let urls = "\(url)/store"
         
-        let parameter = SupplierDataStore(namaSupplier: nama, alamat: alamat, noTelp: telp, email: email)
+        let parameter = ProdukLayananDataStore(namaLayanan: nama)
         
         AF.request(urls, method: .post, parameters: parameter ,headers: header).response { response in
             
@@ -67,28 +68,28 @@ struct SupplierManager
             {
                 if self.parseJson(data: data) != nil
                 {
-                    self.delegate?.didMessage(title: "Success", message: "Success Store Data !")
+                    self.delegate?.didMessage(title: "Success",message: "Success Store Data!")
                 }
                 else
                 {
-                    self.delegate?.didMessage(title: "Error", message: "Failed Store Data !")
+                    self.delegate?.didMessage(title: "Error",message: "Failed Store Data !")
                 }
             }
             else
             {
-                self.delegate?.didMessage(title: "Error", message: "Network Error !")
+                self.delegate?.didMessage(title: "Error",message: "Network Error !")
             }
             
         }
         
     }
     
-    func edit_data(nama: String, alamat: String, telp: String, email: String,id: Int)
+    func edit_data(nama: String,id: Int)
     {
         let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]
         let urls = "\(url)/edit/\(id)"
         
-        let parameter = SupplierDataStore(namaSupplier: nama, alamat: alamat, noTelp: telp, email: email)
+        let parameter = ProdukLayananDataStore(namaLayanan: nama)
         
         AF.request(urls, method: .post, parameters: parameter ,headers: header).response { response in
             
@@ -96,16 +97,16 @@ struct SupplierManager
             {
                 if self.parseJson(data: data) != nil
                 {
-                    self.delegate?.didMessage(title: "Success", message: "Success Edit Data !")
+                    self.delegate?.didMessage(title: "Success",message: "Success Edit Data!")
                 }
                 else
                 {
-                    self.delegate?.didMessage(title: "Error", message: "Failed Edit Data !")
+                    self.delegate?.didMessage(title: "Error",message: "Failed Edit Data !")
                 }
             }
             else
             {
-                self.delegate?.didMessage(title: "Error", message: "Network Error !")
+                self.delegate?.didMessage(title: "Error",message: "Network Error !")
             }
             
         }
@@ -128,29 +129,29 @@ struct SupplierManager
                 }
                 else
                 {
-                    self.delegate?.didMessage(title: "Error", message: "Failed Delete Data !")
+                    self.delegate?.didMessage(title: "Error",message: "Failed Fetching Data !")
                 }
             }
             else
             {
-                self.delegate?.didMessage(title: "Error", message: "Network Error !")
+                self.delegate?.didMessage(title: "Error",message: "Network Error !")
             }
         }
     }
     
-    func parseJson(data: Data) -> Supplier?
+    func parseJson(data: Data) -> ProdukLayanan?
     {
         let decoder = JSONDecoder()
         
         do
         {
-            let decodedData = try decoder.decode(Supplier.self, from: data)
-            let supplierData = decodedData
+            let decodedData = try decoder.decode(ProdukLayanan.self, from: data)
+            let produkLayananData = decodedData
             
-            return supplierData
+            return produkLayananData
         }
         catch{
-            self.delegate?.didMessage(title: "Error", message: "Error While Parsing Data !")
+            self.delegate?.didMessage(title: "Error",message: "Error Parsing Data !")
             return nil
         }
     }

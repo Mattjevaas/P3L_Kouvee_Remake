@@ -119,7 +119,14 @@ class ProdukBarangDetailViewController: UIViewController {
     {
         if txtNama.text != nil, txtSatuan.text != nil, txtJumlah.text != nil, txtJual.text != nil, txtBeli.text != nil, txtStockMin.text != nil, stat == 1
         {
-            produkBarangManager.store_data(nama: txtNama.text!, satuan: txtSatuan.text!, jumlahProduk: txtJumlah.text!, hargaJual: txtJual.text!, hargaBeli: txtBeli.text!, stokMinimal: txtStockMin.text!, image: ItemImage.image!)
+            if btnAdd.currentTitle == "Save"
+            {
+                produkBarangManager.store_data(nama: txtNama.text!, satuan: txtSatuan.text!, jumlahProduk: txtJumlah.text!, hargaJual: txtJual.text!, hargaBeli: txtBeli.text!, stokMinimal: txtStockMin.text!, image: ItemImage.image!)
+            }
+            else
+            {
+                produkBarangManager.edit_data(nama: txtNama.text!, satuan: txtSatuan.text!, jumlahProduk: txtJumlah.text!, hargaJual: txtJual.text!, hargaBeli: txtBeli.text!, stokMinimal: txtStockMin.text!, image: ItemImage.image!,id: produkBarangData!.idProduk)
+            }
         }
     }
     

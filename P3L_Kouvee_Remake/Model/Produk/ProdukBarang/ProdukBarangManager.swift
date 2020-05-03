@@ -88,13 +88,53 @@ struct ProdukBarangManager
             debugPrint(response)
             if let data = response.data
             {
-                if let safeData = self.parseJson(data: data)
+                if self.parseJson(data: data) != nil
                 {
-                    self.delegate?.didFetchProdukBarang(produkBarang: safeData)
+                    self.delegate?.didMessageProdukBarang(title: "Success",message: "Success Store Data!")
                 }
                 else
                 {
                     self.delegate?.didMessageProdukBarang(title: "Error", message: "Error Store Data !")
+                }
+            }
+            else
+            {
+                self.delegate?.didMessageProdukBarang(title: "Error", message: "Network Error !")
+            }
+            
+        }
+        
+    }
+    
+    func edit_data(nama: String, satuan: String, jumlahProduk: String, hargaJual: String, hargaBeli: String, stokMinimal: String, image: UIImage, id: Int)
+    {
+
+        let urls = "\(url)/edit/\(id)"
+
+        let imgData = image.jpegData(compressionQuality: 0.2)!
+        let parameters = ["namaProduk": nama, "satuan": satuan, "jumlahProduk": jumlahProduk, "hargaJual": hargaJual, "hargaBeli": hargaBeli, "stokMinimal": stokMinimal]
+        
+        let name = "\(Constant.randomString(length: 10)).jpg"
+        
+        AF.upload(multipartFormData:
+            { multipartFormData in
+                multipartFormData.append(imgData, withName: "productPic",fileName: name, mimeType: "image/jpg")
+                for (key, value) in parameters
+                {
+                    multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                }
+        }, to: urls).response { response in
+            
+            debugPrint(response)
+            if let data = response.data
+            {
+                if self.parseJson(data: data) != nil
+                {
+                    self.delegate?.didMessageProdukBarang(title: "Success",message: "Success Edit Data!")
+                }
+                else
+                {
+                    self.delegate?.didMessageProdukBarang(title: "Error", message: "Error Edit Data !")
                 }
             }
             else

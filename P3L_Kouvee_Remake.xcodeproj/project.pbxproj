@@ -44,6 +44,20 @@
 		84ED2ED02450719A00C8A107 /* ProdukBarangManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2ECF2450719A00C8A107 /* ProdukBarangManager.swift */; };
 		84ED2ED4245071C600C8A107 /* ProdukBarangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2ED3245071C600C8A107 /* ProdukBarangViewController.swift */; };
 		84ED2ED6245071D700C8A107 /* ProdukBarangDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2ED5245071D700C8A107 /* ProdukBarangDetailViewController.swift */; };
+		84FCCF562455B98F0099F3F4 /* ProdukLayanan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF552455B98F0099F3F4 /* ProdukLayanan.swift */; };
+		84FCCF582455B99A0099F3F4 /* ProdukLayananManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF572455B99A0099F3F4 /* ProdukLayananManager.swift */; };
+		84FCCF5B2455BBAB0099F3F4 /* HargaLayanan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF5A2455BBAB0099F3F4 /* HargaLayanan.swift */; };
+		84FCCF5D2455BBB60099F3F4 /* HargaLayananManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF5C2455BBB60099F3F4 /* HargaLayananManager.swift */; };
+		84FCCF602455BD0E0099F3F4 /* ProdukLayananViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF5F2455BD0E0099F3F4 /* ProdukLayananViewController.swift */; };
+		84FCCF622455BD3C0099F3F4 /* ProdukLayananDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF612455BD3C0099F3F4 /* ProdukLayananDetailViewController.swift */; };
+		84FCCF642456BE5B0099F3F4 /* ProdukLayananExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF632456BE5B0099F3F4 /* ProdukLayananExtension.swift */; };
+		84FCCF662456C2970099F3F4 /* LayananViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF652456C2970099F3F4 /* LayananViewController.swift */; };
+		84FCCF692458975C0099F3F4 /* RincianPengadaan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF682458975C0099F3F4 /* RincianPengadaan.swift */; };
+		84FCCF6B2458977C0099F3F4 /* PengadaanBarang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF6A2458977C0099F3F4 /* PengadaanBarang.swift */; };
+		84FCCF6E245897980099F3F4 /* PengadaanBarangManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF6D245897980099F3F4 /* PengadaanBarangManager.swift */; };
+		84FCCF70245897B10099F3F4 /* RincianPengadaanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF6F245897B10099F3F4 /* RincianPengadaanManager.swift */; };
+		84FCCF73245899F10099F3F4 /* PengadaanBarangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF72245899F10099F3F4 /* PengadaanBarangViewController.swift */; };
+		84FCCF7524589AD40099F3F4 /* PengadaanBarangDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCCF7424589AD30099F3F4 /* PengadaanBarangDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +101,20 @@
 		84ED2ECF2450719A00C8A107 /* ProdukBarangManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukBarangManager.swift; sourceTree = "<group>"; };
 		84ED2ED3245071C600C8A107 /* ProdukBarangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukBarangViewController.swift; sourceTree = "<group>"; };
 		84ED2ED5245071D700C8A107 /* ProdukBarangDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukBarangDetailViewController.swift; sourceTree = "<group>"; };
+		84FCCF552455B98F0099F3F4 /* ProdukLayanan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukLayanan.swift; sourceTree = "<group>"; };
+		84FCCF572455B99A0099F3F4 /* ProdukLayananManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukLayananManager.swift; sourceTree = "<group>"; };
+		84FCCF5A2455BBAB0099F3F4 /* HargaLayanan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HargaLayanan.swift; sourceTree = "<group>"; };
+		84FCCF5C2455BBB60099F3F4 /* HargaLayananManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HargaLayananManager.swift; sourceTree = "<group>"; };
+		84FCCF5F2455BD0E0099F3F4 /* ProdukLayananViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukLayananViewController.swift; sourceTree = "<group>"; };
+		84FCCF612455BD3C0099F3F4 /* ProdukLayananDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukLayananDetailViewController.swift; sourceTree = "<group>"; };
+		84FCCF632456BE5B0099F3F4 /* ProdukLayananExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdukLayananExtension.swift; sourceTree = "<group>"; };
+		84FCCF652456C2970099F3F4 /* LayananViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayananViewController.swift; sourceTree = "<group>"; };
+		84FCCF682458975C0099F3F4 /* RincianPengadaan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RincianPengadaan.swift; sourceTree = "<group>"; };
+		84FCCF6A2458977C0099F3F4 /* PengadaanBarang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PengadaanBarang.swift; sourceTree = "<group>"; };
+		84FCCF6D245897980099F3F4 /* PengadaanBarangManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PengadaanBarangManager.swift; sourceTree = "<group>"; };
+		84FCCF6F245897B10099F3F4 /* RincianPengadaanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RincianPengadaanManager.swift; sourceTree = "<group>"; };
+		84FCCF72245899F10099F3F4 /* PengadaanBarangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PengadaanBarangViewController.swift; sourceTree = "<group>"; };
+		84FCCF7424589AD30099F3F4 /* PengadaanBarangDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PengadaanBarangDetailViewController.swift; sourceTree = "<group>"; };
 		B556E20DF09FEEFD248DB420 /* Pods-P3L_Kouvee_Remake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-P3L_Kouvee_Remake.debug.xcconfig"; path = "Target Support Files/Pods-P3L_Kouvee_Remake/Pods-P3L_Kouvee_Remake.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +175,8 @@
 		842C0240244DCD2C00CA2BF5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				84FCCF71245899DD0099F3F4 /* Pengadaan */,
+				84FCCF5E2455BCF40099F3F4 /* Layanan */,
 				84ED2ED1245071B200C8A107 /* Produk */,
 				84ED2EBA244F31C100C8A107 /* Hewan */,
 				84ED2EA1244EB89B00C8A107 /* Supplier */,
@@ -168,6 +198,7 @@
 		842C0242244DCD5300CA2BF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84FCCF672458971C0099F3F4 /* Pengadaan */,
 				84ED2ECB245070BB00C8A107 /* Produk */,
 				84ED2EAB244ED0A400C8A107 /* Hewan */,
 				84ED2EA2244EB8A300C8A107 /* Supplier */,
@@ -293,6 +324,7 @@
 		84ED2ECB245070BB00C8A107 /* Produk */ = {
 			isa = PBXGroup;
 			children = (
+				84FCCF542455B9750099F3F4 /* ProdukLayanan */,
 				84ED2ECC2450717500C8A107 /* ProdukBarang */,
 			);
 			path = Produk;
@@ -322,6 +354,64 @@
 				84ED2ED5245071D700C8A107 /* ProdukBarangDetailViewController.swift */,
 			);
 			path = ProdukBarang;
+			sourceTree = "<group>";
+		};
+		84FCCF542455B9750099F3F4 /* ProdukLayanan */ = {
+			isa = PBXGroup;
+			children = (
+				84FCCF592455BB940099F3F4 /* HargaLayanan */,
+				84FCCF552455B98F0099F3F4 /* ProdukLayanan.swift */,
+				84FCCF572455B99A0099F3F4 /* ProdukLayananManager.swift */,
+			);
+			path = ProdukLayanan;
+			sourceTree = "<group>";
+		};
+		84FCCF592455BB940099F3F4 /* HargaLayanan */ = {
+			isa = PBXGroup;
+			children = (
+				84FCCF5A2455BBAB0099F3F4 /* HargaLayanan.swift */,
+				84FCCF5C2455BBB60099F3F4 /* HargaLayananManager.swift */,
+			);
+			path = HargaLayanan;
+			sourceTree = "<group>";
+		};
+		84FCCF5E2455BCF40099F3F4 /* Layanan */ = {
+			isa = PBXGroup;
+			children = (
+				84FCCF5F2455BD0E0099F3F4 /* ProdukLayananViewController.swift */,
+				84FCCF612455BD3C0099F3F4 /* ProdukLayananDetailViewController.swift */,
+				84FCCF632456BE5B0099F3F4 /* ProdukLayananExtension.swift */,
+				84FCCF652456C2970099F3F4 /* LayananViewController.swift */,
+			);
+			path = Layanan;
+			sourceTree = "<group>";
+		};
+		84FCCF672458971C0099F3F4 /* Pengadaan */ = {
+			isa = PBXGroup;
+			children = (
+				84FCCF6C245897810099F3F4 /* Rincian */,
+				84FCCF6A2458977C0099F3F4 /* PengadaanBarang.swift */,
+				84FCCF6D245897980099F3F4 /* PengadaanBarangManager.swift */,
+			);
+			path = Pengadaan;
+			sourceTree = "<group>";
+		};
+		84FCCF6C245897810099F3F4 /* Rincian */ = {
+			isa = PBXGroup;
+			children = (
+				84FCCF682458975C0099F3F4 /* RincianPengadaan.swift */,
+				84FCCF6F245897B10099F3F4 /* RincianPengadaanManager.swift */,
+			);
+			path = Rincian;
+			sourceTree = "<group>";
+		};
+		84FCCF71245899DD0099F3F4 /* Pengadaan */ = {
+			isa = PBXGroup;
+			children = (
+				84FCCF72245899F10099F3F4 /* PengadaanBarangViewController.swift */,
+				84FCCF7424589AD30099F3F4 /* PengadaanBarangDetailViewController.swift */,
+			);
+			path = Pengadaan;
 			sourceTree = "<group>";
 		};
 		B6580A09FF6979897F4F5922 /* Pods */ = {
@@ -454,32 +544,46 @@
 				84ED2ECE2450718800C8A107 /* ProdukBarang.swift in Sources */,
 				84ED2EAA244EBA9500C8A107 /* SupplierDetailViewController.swift in Sources */,
 				84ED2EC8244F4D6600C8A107 /* JenisHewanViewController.swift in Sources */,
+				84FCCF622455BD3C0099F3F4 /* ProdukLayananDetailViewController.swift in Sources */,
 				84ED2ED4245071C600C8A107 /* ProdukBarangViewController.swift in Sources */,
 				84ED2EA4244EB8BC00C8A107 /* Supplier.swift in Sources */,
 				842C0247244DCFAF00CA2BF5 /* TableViewCell.swift in Sources */,
 				842C0256244E040500CA2BF5 /* CustomerViewController.swift in Sources */,
+				84FCCF7524589AD40099F3F4 /* PengadaanBarangDetailViewController.swift in Sources */,
+				84FCCF70245897B10099F3F4 /* RincianPengadaanManager.swift in Sources */,
 				842C0259244E062300CA2BF5 /* CustomerDetailViewController.swift in Sources */,
+				84FCCF5D2455BBB60099F3F4 /* HargaLayananManager.swift in Sources */,
+				84FCCF6E245897980099F3F4 /* PengadaanBarangManager.swift in Sources */,
 				842C0231244DC36800CA2BF5 /* LoginViewController.swift in Sources */,
 				84ED2EAF244F2C7A00C8A107 /* JenisHewan.swift in Sources */,
 				84ED2EB5244F2C9D00C8A107 /* UkuranHewanManager.swift in Sources */,
 				84ED2EB1244F2C8700C8A107 /* JenisHewanManager.swift in Sources */,
+				84FCCF562455B98F0099F3F4 /* ProdukLayanan.swift in Sources */,
+				84FCCF662456C2970099F3F4 /* LayananViewController.swift in Sources */,
 				84ED2EBC244F31CF00C8A107 /* HewanViewController.swift in Sources */,
 				84ED2EB3244F2C9400C8A107 /* UkuranHewan.swift in Sources */,
+				84FCCF5B2455BBAB0099F3F4 /* HargaLayanan.swift in Sources */,
 				842C022D244DC36800CA2BF5 /* AppDelegate.swift in Sources */,
 				842C022F244DC36800CA2BF5 /* SceneDelegate.swift in Sources */,
 				84ED2EB7244F2CA600C8A107 /* Hewan.swift in Sources */,
+				84FCCF692458975C0099F3F4 /* RincianPengadaan.swift in Sources */,
+				84FCCF602455BD0E0099F3F4 /* ProdukLayananViewController.swift in Sources */,
 				84ED2ED6245071D700C8A107 /* ProdukBarangDetailViewController.swift in Sources */,
 				84ED2EC0244F39DF00C8A107 /* HewanDetailExtension.swift in Sources */,
+				84FCCF6B2458977C0099F3F4 /* PengadaanBarang.swift in Sources */,
+				84FCCF642456BE5B0099F3F4 /* ProdukLayananExtension.swift in Sources */,
 				84ED2EC5244F458E00C8A107 /* UkuranHewanDetailViewController.swift in Sources */,
 				84ED2EA8244EBA8600C8A107 /* SupplierViewController.swift in Sources */,
 				842C0252244DE02600CA2BF5 /* LoginManager.swift in Sources */,
 				84ED2EA6244EB8F800C8A107 /* SupplierManager.swift in Sources */,
 				842C0244244DCE5200CA2BF5 /* Customer.swift in Sources */,
+				84FCCF582455B99A0099F3F4 /* ProdukLayananManager.swift in Sources */,
 				842C024B244DD73000CA2BF5 /* CustomerManager.swift in Sources */,
 				84ED2EB9244F2CB300C8A107 /* HewanManager.swift in Sources */,
 				84ED2ECA244F4D7300C8A107 /* JenisHewanDetailViewController.swift in Sources */,
 				84ED2EC3244F457100C8A107 /* UkuranHewanViewController.swift in Sources */,
 				842C0250244DDFF400CA2BF5 /* Login.swift in Sources */,
+				84FCCF73245899F10099F3F4 /* PengadaanBarangViewController.swift in Sources */,
 				84ED2ED02450719A00C8A107 /* ProdukBarangManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

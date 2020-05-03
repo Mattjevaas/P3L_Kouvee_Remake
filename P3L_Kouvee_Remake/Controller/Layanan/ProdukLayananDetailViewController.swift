@@ -1,33 +1,27 @@
 //
-//  HewanDetailViewController.swift
+//  ProdukLayananDetailViewController.swift
 //  P3L_Kouvee_Remake
 //
-//  Created by Admin on 21/04/20.
+//  Created by Admin on 26/04/20.
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
 import UIKit
 
-class HewanDetailViewController: UIViewController {
-
-
-    @IBOutlet weak var txtID: UILabel!
-    @IBOutlet weak var txtNama: UITextField!
+class ProdukLayananDetailViewController: UIViewController {
     
+    @IBOutlet weak var txtID: UILabel!
+    @IBOutlet weak var txtHarga: UITextField!
     @IBOutlet weak var pickerUkuran: UIPickerView!
     @IBOutlet weak var pickerJenis: UIPickerView!
-    @IBOutlet weak var pickerDate: UIDatePicker!
-    @IBOutlet weak var pickerCustomer: UIPickerView!
+    @IBOutlet weak var pickerLayanan: UIPickerView!
     @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet weak var txtCreated: UILabel!
     @IBOutlet weak var txtEdited: UILabel!
     @IBOutlet weak var txtDeleted: UILabel!
     
-
-    let dateFormatter = DateFormatter()
     let dateFormatter2 = DateFormatter()
     let dateFormatter3 = DateFormatter()
-    
     var ukuranManager = UkuranHewanManager()
     var dataUkuran: [UkuranHewanData] = []
     var ukuranValue: Int?
@@ -36,26 +30,22 @@ class HewanDetailViewController: UIViewController {
     var dataJenis: [JenisHewanData] = []
     var jenisValue: Int?
     
-    var customerManager = CustomerManager()
-    var dataCustomer: [CustomerData] = []
-    var customerValue: Int?
+    var layananManager = ProdukLayananManager()
+    var dataLayanan: [ProdukLayananData] = []
+    var layananValue: Int?
     
-    var hewanManager = HewanManager()
-    var hewanData: HewanData?
-    var strDate: String?
-    
+    var hargaLayananManager = HargaLayananManager()
+    var dataHargaLayanan: HargaLayananData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         btnAdd.layer.cornerRadius = btnAdd.frame.size.height / 2
         
-        if hewanData != nil
+        if dataHargaLayanan != nil
         {
             btnAdd.setTitle("Edit", for: .normal)
         }
-        
-        hewanManager.delegate = self
         
         pickerUkuran.dataSource = self
         pickerUkuran.delegate = self
@@ -65,45 +55,36 @@ class HewanDetailViewController: UIViewController {
         pickerJenis.delegate = self
         jenisManager.delegate = self
         
-        pickerCustomer.dataSource = self
-        pickerCustomer.delegate = self
-        customerManager.delegate = self
+        pickerLayanan.dataSource = self
+        pickerLayanan.delegate = self
+        layananManager.delegate = self
         
-        customerManager.fetch_all()
+        layananManager.fetch_all()
         ukuranManager.fetch_all()
         jenisManager.fetch_all()
+        hargaLayananManager.delegate = self
         initData()
+        
     }
     
     func initData()
     {
-        if let id = hewanData?.idHewan
+        if let id = dataHargaLayanan?.idHargaLayanan
         {
-            txtID.text = "ID Hewan : \(id)"
+            txtID.text = "ID Service : \(id)"
         }
         else
         {
             txtID.isHidden = true
         }
         
-        txtNama.text = hewanData?.namaHewan
-        
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        if let date = hewanData?.tglLahir
-        {
-            strDate = date
-            pickerDate.date = dateFormatter.date(from: date)!
-        }
-        else
-        {
-            strDate = dateFormatter.string(from: pickerDate.date)
-        }
+        txtHarga.text = dataHargaLayanan?.hargaLayanan
         
         var temp: Date
         dateFormatter2.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter2.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter3.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        if let date = hewanData?.created_at
+        if let date = dataHargaLayanan?.created_at
         {
             temp = dateFormatter2.date(from: date)!
             txtCreated.text = "created at : \(dateFormatter3.string(from: temp))"
@@ -113,17 +94,17 @@ class HewanDetailViewController: UIViewController {
             txtCreated.isHidden = true
         }
         
-        if let date = hewanData?.edited_at
+        if let date = dataHargaLayanan?.edited_at
         {
             temp = dateFormatter2.date(from: date)!
-            txtEdited.text = "edited at : \(dateFormatter3.string(from: temp)) | Pegawai ID : \(hewanData?.edited_by ?? "-")"
+            txtEdited.text = "edited at : \(dateFormatter3.string(from: temp)) | Pegawai ID : \(dataHargaLayanan?.edited_by ?? "-")"
         }
         else
         {
             txtEdited.isHidden = true
         }
             
-        if let date = hewanData?.deleted_at
+        if let date = dataHargaLayanan?.deleted_at
         {
             temp = dateFormatter2.date(from: date)!
             txtDeleted.text = "deleted at : \(dateFormatter3.string(from: temp))"
@@ -132,30 +113,21 @@ class HewanDetailViewController: UIViewController {
         {
             txtDeleted.isHidden = true
         }
-        
     }
     
     @IBAction func btnAdd(_ sender: UIButton)
     {
         
-        if txtNama.text != nil, ukuranValue != nil, jenisValue != nil, customerValue != nil, strDate != nil
+        if txtHarga.text != nil, ukuranValue != nil, jenisValue != nil, layananValue != nil
         {
             if btnAdd.currentTitle == "Save"
             {
-                hewanManager.store_data(nama: txtNama.text!, lahir: strDate!, idUkuran: ukuranValue!, idJenis: jenisValue!, idCustomer: customerValue!)
+                hargaLayananManager.store_data(harga: txtHarga.text!, idUkuran: ukuranValue!, idJenis: jenisValue!, idLayanan: layananValue!)
             }
             else
             {
-                hewanManager.edit_data(nama: txtNama.text!, lahir: strDate!, idUkuran: ukuranValue!, idJenis: jenisValue!, idCustomer: customerValue!,id: hewanData!.idHewan)
+                hargaLayananManager.edit_data(harga: txtHarga.text!, idUkuran: ukuranValue!, idJenis: jenisValue!, idLayanan: layananValue!,id: dataHargaLayanan!.idHargaLayanan)
             }
         }
     }
-    
-    @IBAction func pickerDateChange(_ sender: Any)
-    {
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        strDate = dateFormatter.string(from: pickerDate.date)
-        print(strDate!)
-    }
-    
 }

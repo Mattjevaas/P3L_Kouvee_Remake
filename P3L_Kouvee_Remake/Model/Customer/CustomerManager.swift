@@ -85,6 +85,36 @@ struct CustomerManager
         
     }
     
+    func edit_data(nama: String, lahir: String, alamat: String, telp: String, email: String,id: Int)
+    {
+        let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json"]
+        let urls = "\(url)/edit/\(id)"
+        
+        let parameter = CustomerDataStore(namaCustomer: nama, tglLahir: lahir, alamat: alamat, noTelp: telp, email: email)
+        
+        AF.request(urls, method: .post, parameters: parameter ,headers: header).response { response in
+            
+            debugPrint(response)
+            if let data = response.data
+            {
+                if self.parseJson(data: data) != nil
+                {
+                    self.delegate?.didMessage(title: "Success", message: "Success Edit Data!")
+                }
+                else
+                {
+                    self.delegate?.didMessage(title: "Error", message: "Failed Edit Data!")
+                }
+            }
+            else
+            {
+                self.delegate?.didMessage(title: "Error", message: "Network Error !")
+            }
+            
+        }
+        
+    }
+    
     func delete_data(id: Int)
     {
         let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json"]

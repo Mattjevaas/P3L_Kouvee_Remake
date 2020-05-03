@@ -92,6 +92,10 @@ class UkuranHewanDetailViewController: UIViewController {
             {
                 ukuranManager.store_data(nama: txtNama.text!)
             }
+            else
+            {
+                ukuranManager.edit_data(nama: txtNama.text!,id: ukuranData!.idUkuranHewan)
+            }
         }
     }
 }

@@ -66,13 +66,42 @@ struct HewanManager
             debugPrint(response)
             if let data = response.data
             {
-                if let safeData = self.parseJson(data: data)
+                if self.parseJson(data: data) != nil
                 {
-                    self.delegate?.didFetchHewan(hewan: safeData)
+                    self.delegate?.didMessageHewan(title: "Success",message: "Success Store Data!")
                 }
                 else
                 {
                     self.delegate?.didMessageHewan(title: "Error",message: "Failed Store Data !")
+                }
+            }
+            else
+            {
+                self.delegate?.didMessageHewan(title: "Error",message: "Network Error !")
+            }
+        }
+        
+    }
+    
+    func edit_data(nama: String, lahir: String, idUkuran: Int, idJenis: Int, idCustomer: Int, id: Int)
+    {
+        let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]
+        let urls = "\(url)/edit/\(id)"
+        
+        let parameter = HewanDataStore(namaHewan: nama, tglLahir: lahir, idUkuranHewan: idUkuran, idJenisHewan: idJenis, idCustomer_Member: idCustomer)
+        
+        AF.request(urls, method: .post, parameters: parameter ,headers: header).response { response in
+            
+            debugPrint(response)
+            if let data = response.data
+            {
+                if self.parseJson(data: data) != nil
+                {
+                    self.delegate?.didMessageHewan(title: "Success",message: "Success Edit Data!")
+                }
+                else
+                {
+                    self.delegate?.didMessageHewan(title: "Error",message: "Failed Edit Data !")
                 }
             }
             else

@@ -100,6 +100,10 @@ class SupplierDetailViewController: UIViewController {
             {
                 supplierManager.store_data(nama: txtNama.text!, alamat: txtAlamat.text!, telp: txtNotelp.text!, email: txtEmail.text!)
             }
+            else
+            {
+                supplierManager.edit_data(nama: txtNama.text!, alamat: txtAlamat.text!, telp: txtNotelp.text!, email: txtEmail.text!,id: dataSupplier!.idSupplier)
+            }
         }
     }
 }

@@ -66,13 +66,43 @@ struct UkuranHewanManager
             debugPrint(response)
             if let data = response.data
             {
-                if let safeData = self.parseJson(data: data)
+                if self.parseJson(data: data) != nil
                 {
-                    self.delegate?.didFetchUkuran(ukuranhewan: safeData)
+                    self.delegate?.didMessageUkuran(title: "Success", message: "Success Store Data !")
                 }
                 else
                 {
                     self.delegate?.didMessageUkuran(title: "Error", message: "Failed Store Data !")
+                }
+            }
+            else
+            {
+                self.delegate?.didMessageUkuran(title: "Error", message: "Network Error !")
+            }
+            
+        }
+        
+    }
+    
+    func edit_data(nama: String, id: Int)
+    {
+        let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]
+        let urls = "\(url)/edit/\(id)"
+        
+        let parameter = UkuranHewanDataStore(ukuranHewan: nama)
+        
+        AF.request(urls, method: .post, parameters: parameter ,headers: header).response { response in
+            
+            debugPrint(response)
+            if let data = response.data
+            {
+                if self.parseJson(data: data) != nil
+                {
+                    self.delegate?.didMessageUkuran(title: "Success", message: "Success Edit Data !")
+                }
+                else
+                {
+                    self.delegate?.didMessageUkuran(title: "Error", message: "Failed Edit Data !")
                 }
             }
             else
