@@ -17,6 +17,8 @@ class ProdukBarangViewController: UIViewController {
     var imagesUrls: URL?
     var arrImages: [UIImage]? = []
     var menuOut = false
+    var sortPrice = false
+    var sortStock = false
     var filteredProdukBarang: [ProdukBarangData] = []
     var dataProdukBarang: [ProdukBarangData] = []
     var produkBarangDataSegue: ProdukBarangData?
@@ -53,6 +55,67 @@ class ProdukBarangViewController: UIViewController {
     @objc private func refreshProdukBarangData(_ sender: Any) {
         produkBarangManager.fetch_all()
     }
+    
+    @IBAction func btnSort(_ sender: UIButton) {
+        
+        if sender.currentTitle == "Sort by Price"
+        {
+            if isFiltering
+            {
+                if sortPrice == false
+                {
+                    filteredProdukBarang = filteredProdukBarang.sorted(by: {$0.hargaJual > $1.hargaJual })
+                }
+                else
+                {
+                    filteredProdukBarang = filteredProdukBarang.sorted(by: {$0.hargaJual < $1.hargaJual })
+                }
+            }
+            else
+            {
+                if sortPrice == false
+                {
+                    dataProdukBarang = dataProdukBarang.sorted(by: {$0.hargaJual > $1.hargaJual })
+                }
+                else
+                {
+                    dataProdukBarang = dataProdukBarang.sorted(by: {$0.hargaJual < $1.hargaJual })
+                }
+            }
+            
+            sortPrice = !sortPrice
+        }
+        else
+        {
+            if isFiltering
+            {
+                if sortStock == false
+                {
+                    filteredProdukBarang = filteredProdukBarang.sorted(by: {$0.jumlahProduk > $1.jumlahProduk })
+                }
+                else
+                {
+                    filteredProdukBarang = filteredProdukBarang.sorted(by: {$0.jumlahProduk < $1.jumlahProduk })
+                }
+            }
+            else
+            {
+                if sortStock == false
+                {
+                    dataProdukBarang = dataProdukBarang.sorted(by: {$0.jumlahProduk > $1.jumlahProduk })
+                }
+                else
+                {
+                    dataProdukBarang = dataProdukBarang.sorted(by: {$0.jumlahProduk < $1.jumlahProduk })
+                }
+            }
+            
+            sortStock = !sortStock
+        }
+        
+        produkBarangTable.reloadData()
+    }
+    
     
     @IBAction func btnAdd(_ sender: Any)
     {

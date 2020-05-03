@@ -1142,26 +1142,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bS6-Gc-ZYw">
-                                <rect key="frame" x="20" y="118" width="128" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1mM-kt-IUE">
+                                <rect key="frame" x="20" y="118" width="131" height="120"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cube.box.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yHd-Ma-yVU">
-                                        <rect key="frame" x="0.0" y="0.33333333333333393" width="30" height="30"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="JX2-cM-G5I"/>
-                                            <constraint firstAttribute="width" constant="30" id="qNO-5a-Gx5"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZ1-cQ-G3n">
-                                        <rect key="frame" x="38" y="0.0" width="90" height="30"/>
-                                        <state key="normal" title="Restock Item">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Zql-ii-YEk" kind="show" id="GSC-TE-32S"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bS6-Gc-ZYw">
+                                        <rect key="frame" x="0.0" y="0.0" width="131" height="30"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cube.box.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yHd-Ma-yVU">
+                                                <rect key="frame" x="0.0" y="0.33333333333333393" width="30" height="30"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="JX2-cM-G5I"/>
+                                                    <constraint firstAttribute="width" constant="30" id="qNO-5a-Gx5"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZ1-cQ-G3n">
+                                                <rect key="frame" x="38" y="0.0" width="93" height="30"/>
+                                                <state key="normal" title="Restock Item">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="Zql-ii-YEk" kind="show" id="GSC-TE-32S"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZG2-L8-sEB">
+                                        <rect key="frame" x="0.0" y="45" width="131" height="30"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle.grid.1x2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g8E-1i-Wdy">
+                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="30" height="27.000000000000004"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="66v-o3-UOz"/>
+                                                    <constraint firstAttribute="height" constant="30" id="maw-6P-dwg"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Af9-sc-hUI">
+                                                <rect key="frame" x="38" y="0.0" width="93" height="30"/>
+                                                <state key="normal" title="Sort by Price">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnSort:" destination="vQx-Vw-sqs" eventType="touchUpInside" id="x9z-NB-gS0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IPM-G3-wT7">
+                                        <rect key="frame" x="0.0" y="90" width="131" height="30"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle.grid.1x2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dhz-Ri-qQ0">
+                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="30" height="27.000000000000004"/>
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="RmE-Om-5yE"/>
+                                                    <constraint firstAttribute="width" constant="30" id="aXV-Jt-oZe"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sK-bO-xgO">
+                                                <rect key="frame" x="38" y="0.0" width="93" height="30"/>
+                                                <state key="normal" title="Sort by Stock">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnSort:" destination="vQx-Vw-sqs" eventType="touchUpInside" id="ppc-KG-ryF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hoL-rX-V2r">
@@ -1173,10 +1222,10 @@
                         <constraints>
                             <constraint firstItem="hoL-rX-V2r" firstAttribute="leading" secondItem="Zro-p3-lOd" secondAttribute="leading" id="0vL-pD-J4N"/>
                             <constraint firstItem="hoL-rX-V2r" firstAttribute="trailing" secondItem="Zro-p3-lOd" secondAttribute="trailing" id="ARl-MF-saB"/>
+                            <constraint firstItem="1mM-kt-IUE" firstAttribute="top" secondItem="Zro-p3-lOd" secondAttribute="top" constant="30" id="AXI-Iu-Quu"/>
                             <constraint firstItem="hoL-rX-V2r" firstAttribute="bottom" secondItem="Zro-p3-lOd" secondAttribute="bottom" id="BZR-ke-e3T"/>
                             <constraint firstItem="hoL-rX-V2r" firstAttribute="top" secondItem="Zro-p3-lOd" secondAttribute="top" id="FQv-jx-7sG"/>
-                            <constraint firstItem="bS6-Gc-ZYw" firstAttribute="top" secondItem="Zro-p3-lOd" secondAttribute="top" constant="30" id="Gc8-9j-In4"/>
-                            <constraint firstItem="bS6-Gc-ZYw" firstAttribute="leading" secondItem="Zro-p3-lOd" secondAttribute="leading" constant="20" id="orb-Ii-2mh"/>
+                            <constraint firstItem="1mM-kt-IUE" firstAttribute="leading" secondItem="Zro-p3-lOd" secondAttribute="leading" constant="20" id="okI-fK-HzE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zro-p3-lOd"/>
                     </view>
@@ -2622,6 +2671,7 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="petshop_0" width="460" height="513.33331298828125"/>
         <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="rectangle.grid.1x2" catalog="system" width="128" height="101"/>
         <image name="square.stack.3d.up.fill" catalog="system" width="128" height="124"/>
     </resources>
 </document>
