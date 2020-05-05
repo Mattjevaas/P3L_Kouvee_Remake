@@ -145,6 +145,7 @@ class ProdukBarangViewController: UIViewController {
             if let destinationVC = segue.destination as? ProdukBarangDetailViewController
             {
                 destinationVC.produkBarangData = produkBarangDataSegue
+                destinationVC.stat = 1
             }
         }
     }

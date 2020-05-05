@@ -22,7 +22,8 @@ struct PengadaanBarangData: Codable
     let statusBrgDatang: String
     let statusCetak: String
     let idSupplier: SupplierData
-    let listProduct: [RincianPengadaanDataSpecial]
+    let total: String
+    var listProduct: [RincianPengadaanDataSpecial]
 }
 
 struct PengadaanBarangDataStore: Codable

@@ -214,6 +214,33 @@ extension PengadaanBarangViewController: UITableViewDataSource
             pengadaanBarangTable.reloadData()
         }
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let add = UIContextualAction(style: .normal, title: "Edit") { (action, view, completion ) in
+            print("add2 called, table is Editing \(tableView.isEditing)")
+            tableView.isEditing = false
+
+        }
+
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion ) in
+            if self.isFiltering
+            {
+                self.pengadaanBarangManager.delete_data(id: self.filteredPengadaanBarang[indexPath.row].idPengadaanBarang)
+                self.filteredPengadaanBarang.remove(at: indexPath.row)
+            }
+            else
+            {
+                self.pengadaanBarangManager.delete_data(id: self.dataPengadaanBarang[indexPath.row].idPengadaanBarang)
+                self.dataPengadaanBarang.remove(at: indexPath.row)
+            }
+            
+            self.pengadaanBarangTable.reloadData()
+        }
+
+        let config = UISwipeActionsConfiguration(actions: [add, delete])
+        return config
+    }
 }
 
 //MARK: - Table Delegate

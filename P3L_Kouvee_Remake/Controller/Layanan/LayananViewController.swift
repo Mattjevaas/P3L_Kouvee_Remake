@@ -18,7 +18,7 @@ class LayananViewController: UIViewController {
     @IBOutlet weak var txtDeleted: UILabel!
     @IBOutlet weak var jenisLayananTable: UITableView!
     
-    
+    var tempID = 0
     let dateFormatter2 = DateFormatter()
     let dateFormatter3 = DateFormatter()
     var index: IndexPath?
@@ -47,6 +47,13 @@ class LayananViewController: UIViewController {
                 layananManager.store_data(nama: txtNama.text!)
             }
         }
+        else
+        {
+            if txtNama.text != "" && tempID != 0
+            {
+                layananManager.edit_data(nama: txtNama.text!,id: tempID)
+            }
+        }
     }
     
     @IBAction func btnClear(_ sender: Any)
@@ -67,6 +74,8 @@ class LayananViewController: UIViewController {
         {
             jenisLayananTable.deselectRow(at: indexes, animated: false)
         }
+        
+        tempID = 0
         
     }
     
@@ -152,6 +161,7 @@ extension LayananViewController: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         deInit()
+        tempID = dataLayanan[indexPath.row].idLayanan
         txtID.text = "ID Jenis Layanan : \(dataLayanan[indexPath.row].idLayanan)"
         txtNama.text = dataLayanan[indexPath.row].namaLayanan
         

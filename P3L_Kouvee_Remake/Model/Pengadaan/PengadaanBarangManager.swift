@@ -112,6 +112,56 @@ struct PengadaanBarangManager
         }
     }
     
+    func confirm_datang(id: Int)
+    {
+        let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]
+        let urls = "\(url)/datang/\(id)"
+        
+        AF.request(urls, method: .post ,headers: header).response { response in
+            
+            if let data = response.data
+            {
+                if self.parseJson(data: data) != nil
+                {
+                    self.delegate?.didMessagePengadaanBarang(title: "Success", message: "Success Update Data !")
+                }
+                else
+                {
+                    self.delegate?.didMessagePengadaanBarang(title: "Error", message: "Failed Update Data !")
+                }
+            }
+            else
+            {
+                self.delegate?.didMessagePengadaanBarang(title: "Error", message: "Network Error !")
+            }
+        }
+    }
+    
+    func confirm_cetak(id: Int)
+    {
+        let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]
+        let urls = "\(url)/cetak/\(id)"
+        
+        AF.request(urls, method: .post ,headers: header).response { response in
+            
+            if let data = response.data
+            {
+                if self.parseJson(data: data) != nil
+                {
+                    self.delegate?.didMessagePengadaanBarang(title: "Success", message: "Success Update Data !")
+                }
+                else
+                {
+                    self.delegate?.didMessagePengadaanBarang(title: "Error", message: "Failed Update Data !")
+                }
+            }
+            else
+            {
+                self.delegate?.didMessagePengadaanBarang(title: "Error", message: "Network Error !")
+            }
+        }
+    }
+    
     func parseJson(data: Data) -> PengadaanBarang?
     {
         let decoder = JSONDecoder()

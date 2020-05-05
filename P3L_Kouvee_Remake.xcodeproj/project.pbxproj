@@ -23,6 +23,7 @@
 		842C0252244DE02600CA2BF5 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C0251244DE02600CA2BF5 /* LoginManager.swift */; };
 		842C0256244E040500CA2BF5 /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C0255244E040500CA2BF5 /* CustomerViewController.swift */; };
 		842C0259244E062300CA2BF5 /* CustomerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C0258244E062300CA2BF5 /* CustomerDetailViewController.swift */; };
+		849C6DEE246114C2001E6BB8 /* StockMenipisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C6DED246114C2001E6BB8 /* StockMenipisViewController.swift */; };
 		84ED2EA4244EB8BC00C8A107 /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EA3244EB8BC00C8A107 /* Supplier.swift */; };
 		84ED2EA6244EB8F800C8A107 /* SupplierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EA5244EB8F800C8A107 /* SupplierManager.swift */; };
 		84ED2EA8244EBA8600C8A107 /* SupplierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EA7244EBA8600C8A107 /* SupplierViewController.swift */; };
@@ -80,6 +81,7 @@
 		842C0251244DE02600CA2BF5 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		842C0255244E040500CA2BF5 /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
 		842C0258244E062300CA2BF5 /* CustomerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailViewController.swift; sourceTree = "<group>"; };
+		849C6DED246114C2001E6BB8 /* StockMenipisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockMenipisViewController.swift; sourceTree = "<group>"; };
 		84A7EC1E245F11AB00DD0059 /* P3L_Kouvee_Remake.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = P3L_Kouvee_Remake.entitlements; sourceTree = "<group>"; };
 		84ED2EA3244EB8BC00C8A107 /* Supplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supplier.swift; sourceTree = "<group>"; };
 		84ED2EA5244EB8F800C8A107 /* SupplierManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierManager.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			children = (
 				84FCCF72245899F10099F3F4 /* PengadaanBarangViewController.swift */,
 				84FCCF7424589AD30099F3F4 /* PengadaanBarangDetailViewController.swift */,
+				849C6DED246114C2001E6BB8 /* StockMenipisViewController.swift */,
 			);
 			path = Pengadaan;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				84ED2EB1244F2C8700C8A107 /* JenisHewanManager.swift in Sources */,
 				84FCCF562455B98F0099F3F4 /* ProdukLayanan.swift in Sources */,
 				84FCCF662456C2970099F3F4 /* LayananViewController.swift in Sources */,
+				849C6DEE246114C2001E6BB8 /* StockMenipisViewController.swift in Sources */,
 				84ED2EBC244F31CF00C8A107 /* HewanViewController.swift in Sources */,
 				84ED2EB3244F2C9400C8A107 /* UkuranHewan.swift in Sources */,
 				84FCCF5B2455BBAB0099F3F4 /* HargaLayanan.swift in Sources */,

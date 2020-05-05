@@ -77,6 +77,31 @@ struct RincianPengadaanManager
         
     }
     
+    func edit_data(jumlah: Int, idPengadaan: Int, idProduk: Int, id: Int)
+    {
+        let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]
+        let urls = "\(url)/edit/\(id)"
+        
+        let parameter = RincianPengadaanDataStore(jumlahBeli: jumlah, idPengadaanBarang: idPengadaan, idProduk: idProduk)
+        
+        AF.request(urls, method: .post, parameters: parameter ,headers: header).response { response in
+            
+            debugPrint(response)
+            if let data = response.data
+            {
+                if self.parseJson(data: data) != nil
+                {
+                    self.delegate?.didMessageRincianPengadaan(title: "Success", message: "Success Store Data !")
+                }
+                else
+                {
+                    self.delegate?.didMessageRincianPengadaan(title: "Error", message: "Failed Store Data !")
+                }
+            }
+        }
+        
+    }
+    
     func delete_data(id: Int)
     {
         let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]

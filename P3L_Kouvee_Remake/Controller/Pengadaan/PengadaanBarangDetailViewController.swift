@@ -23,10 +23,15 @@ class PengadaanBarangDetailViewController: UIViewController {
     @IBOutlet weak var stockMenipis: UILabel!
     @IBOutlet weak var top: NSLayoutConstraint!
     @IBOutlet weak var bottom: NSLayoutConstraint!
+    @IBOutlet weak var btnAddItem: UIButton!
+    @IBOutlet weak var txtTotalKeseluruhan: UILabel!
+    @IBOutlet weak var btnAdd: UIButton!
     
     
     
     var menuOut = false
+    var total: Int = 0
+    var indexPaths: IndexPath? = nil
     var produkBarangManager = ProdukBarangManager()
     var produkBarangData: [ProdukBarangData] = []
     var produkValue: Int = 0
@@ -51,21 +56,49 @@ class PengadaanBarangDetailViewController: UIViewController {
         
         pengadaanBarangManager.delegate = self
         tableItem.dataSource = self
+        tableItem.delegate = self
         initData()
     }
     
     
-    @IBAction func btnAddItem(_ sender: Any) {
+    @IBAction func btnAddItem(_ sender: UIButton) {
         
-        if txtJumlahProduk.text != "0"
+        if sender.currentTitle == "Add"
         {
-            rincianPengadaanManager.store_data(jumlah: Int(txtJumlahProduk.text!)!, idPengadaan: pengadaanBarangData!.idPengadaanBarang, idProduk: produkValue)
+            if txtJumlahProduk.text != "0"
+            {
+                rincianPengadaanManager.store_data(jumlah: Int(txtJumlahProduk.text!)!, idPengadaan: pengadaanBarangData!.idPengadaanBarang, idProduk: produkValue)
+                
+                total += (Int(txtJumlahProduk.text!)! * Int(produkHarga)!)
+                txtTotalKeseluruhan.text = "Total Harga Keseluruhan Rp. \(total)"
+            }
         }
-        
+        else
+        {
+            if txtJumlahProduk.text != "0"
+            {
+                rincianPengadaanManager.edit_data(jumlah: Int(txtJumlahProduk.text!)!, idPengadaan: pengadaanBarangData!.idPengadaanBarang, idProduk: produkValue,id: (pengadaanBarangData?.listProduct[indexPaths!.row].idRincianPengadaan)!)
+                
+                total -= Int((pengadaanBarangData?.listProduct[indexPaths!.row].jumlahBeli)!)! * Int((pengadaanBarangData?.listProduct[indexPaths!.row].idProduk.hargaBeli)!)!
+                total += (Int(txtJumlahProduk.text!)! * Int(produkHarga)!)
+                txtTotalKeseluruhan.text = "Total Harga Keseluruhan Rp. \(total)"
+                
+            }
+        }
         
     }
     
     @IBAction func openMenuAdd(_ sender: Any) {
+        
+        txtJumlahProduk.text = "0"
+        pickerProduct.selectRow(0, inComponent: 0, animated: false)
+        txtTotalHarga.text = "Total : Rp. 0"
+        btnAdd.setTitle("Add", for: .normal)
+        
+        if let index = indexPaths
+        {
+            tableItem.deselectRow(at: index, animated: false)
+        }
         
         if menuOut == false
         {
@@ -83,6 +116,26 @@ class PengadaanBarangDetailViewController: UIViewController {
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {self.view.layoutIfNeeded()}){ (animationComplete) in print("Animation Complete") }
         
     }
+    
+    @IBAction func btnConfirm(_ sender: UIButton) {
+        if sender.currentTitle == "Belum Cetak"
+        {
+            pengadaanBarangManager.confirm_cetak(id: pengadaanBarangData!.idPengadaanBarang)
+            
+            sender.setTitle("Sudah Cetak", for: .normal)
+            sender.backgroundColor = UIColor.green
+            btnAddItem.isHidden = true
+        }
+        
+        if sender.currentTitle == "Belum Datang" && btnCetak.currentTitle == "Sudah Cetak"
+        {
+            pengadaanBarangManager.confirm_datang(id: pengadaanBarangData!.idPengadaanBarang)
+            
+            sender.setTitle("Sudah Datang", for: .normal)
+            sender.backgroundColor = UIColor.green
+        }
+    }
+    
     
     
     @IBAction func setJumlah(_ sender: UIButton) {
@@ -140,19 +193,24 @@ class PengadaanBarangDetailViewController: UIViewController {
                 btnDatang.setTitle("Sudah Datang", for: .normal)
                 btnDatang.backgroundColor = UIColor.green
             }
+            
         }
         
         if pengadaanBarangData?.statusCetak != nil
         {
-            if pengadaanBarangData?.statusBrgDatang == "Sudah Cetak"
+            if pengadaanBarangData?.statusCetak == "Sudah Cetak"
             {
                 btnCetak.setTitle("Sudah Cetak", for: .normal)
                 btnCetak.backgroundColor = UIColor.green
+                
+                btnAddItem.isHidden = true
             }
         }
         
+        total = Int(pengadaanBarangData!.total)!
         txtJumlahProduk.text = "0"
-
+        txtTotalKeseluruhan.text = "Total Harga Keseluruhan Rp. \(total)"
+        
     }
     
     
@@ -173,8 +231,8 @@ extension PengadaanBarangDetailViewController: PengadaanBarangManagerDelegate
     }
 }
 
-//MARK: - Table Data Source
-extension PengadaanBarangDetailViewController: UITableViewDataSource
+//MARK: - Table Data Source & Delegate
+extension PengadaanBarangDetailViewController: UITableViewDataSource, UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -192,7 +250,72 @@ extension PengadaanBarangDetailViewController: UITableViewDataSource
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        if btnCetak.currentTitle == "Belum Cetak"
+        {
+            return true
+        }
+        
+        return false
+        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete
+        {
+            total -= Int((pengadaanBarangData?.listProduct[indexPath.row].idProduk.hargaBeli)!)! * Int((pengadaanBarangData?.listProduct[indexPath.row].jumlahBeli)!)!
+            txtTotalKeseluruhan.text = "Total Harga Keseluruhan Rp. \(total)"
+            
+            rincianPengadaanManager.delete_data(id: (pengadaanBarangData?.listProduct[indexPath.row].idRincianPengadaan)!)
+            pengadaanBarangData?.listProduct.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if btnCetak.currentTitle == "Belum Cetak"
+        {
+            indexPaths = indexPath
+            
+            btnAdd.setTitle("Edit", for: .normal)
+            top.constant = -210
+            bottom.constant = -210
+            menuOut = true
+            
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {self.view.layoutIfNeeded()}){ (animationComplete) in print("Animation Complete") }
+            
+            txtJumlahProduk.text = pengadaanBarangData?.listProduct[indexPath.row].jumlahBeli
+            
+            let id = pengadaanBarangData!.listProduct[indexPath.row].idProduk.idProduk
+            var index = 0
+            
+            for item in produkBarangData
+            {
+                if item.idProduk == id
+                {
+                    break
+                }
+                
+                index += 1
+            }
+            
+            pickerProduct.selectRow(index, inComponent: 0, animated: false)
+            produkHarga = produkBarangData[index].hargaBeli
+            txtTotalHarga.text = "Total : Rp. \(Int(txtJumlahProduk.text!)! * Int((pengadaanBarangData?.listProduct[indexPath.row].idProduk.hargaBeli)!)!)"
+        }
+        else
+        {
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
+    }
 }
+
+
 
 //MARK: - Produk Delegate
 
@@ -224,7 +347,6 @@ extension PengadaanBarangDetailViewController: ProdukBarangManagerDelegate
         {
             stockMenipis.isHidden = true
         }
-        
     }
     
     func didMessageProdukBarang(title: String, message: String) {
@@ -247,7 +369,7 @@ extension PengadaanBarangDetailViewController: UIPickerViewDataSource
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return produkBarangData.count
     }
-    
+
 }
 
 //MARK: - Picker Delegate
@@ -277,7 +399,7 @@ extension PengadaanBarangDetailViewController: UIPickerViewDelegate
     
 }
 
-//MARK : - Text Field Delegate
+//MARK: - Text Field Delegate
 extension PengadaanBarangDetailViewController: UITextFieldDelegate
 {
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -292,7 +414,7 @@ extension PengadaanBarangDetailViewController: UITextFieldDelegate
     }
 }
 
-//MARK : -Rincian Delegate
+//MARK: - Rincian Delegate
 extension PengadaanBarangDetailViewController: RincianPengadaanManagerDelegate
 {
     func didFetchRincianPengadaan(rincianPengadaan: RincianPengadaan) {

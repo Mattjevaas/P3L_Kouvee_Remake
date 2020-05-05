@@ -181,6 +181,12 @@ extension ProdukLayananDetailViewController: UIPickerViewDelegate
 extension ProdukLayananDetailViewController: HargaLayananManagerDelegate
 {
     func didMessageHargaLayanan(title: String, message: String) {
+        
+        if title == "Success"
+        {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
         Constant.showAlert(title: title, message: message, sender: self, back: false)
     }
     
