@@ -86,6 +86,36 @@ struct PengadaanBarangManager
         
     }
     
+    func edit_data(nama: String, idSupplier: Int,id: Int)
+    {
+        let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]
+        let urls = "\(url)/edit/\(id)"
+        
+        let parameter = PengadaanBarangDataStore(namaPengadaan: nama, idSupplier: idSupplier)
+        
+        AF.request(urls, method: .post, parameters: parameter ,headers: header).response { response in
+            
+            debugPrint(response)
+            if let data = response.data
+            {
+                if self.parseJson(data: data) != nil
+                {
+                    self.delegate?.didMessagePengadaanBarang(title: "Success", message: "Success Store Data")
+                }
+                else
+                {
+                    self.delegate?.didMessagePengadaanBarang(title: "Error", message: "Failed Store Data !")
+                }
+            }
+            else
+            {
+                self.delegate?.didMessagePengadaanBarang(title: "Error", message: "Network Error !")
+            }
+            
+        }
+        
+    }
+    
     func delete_data(id: Int)
     {
         let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]

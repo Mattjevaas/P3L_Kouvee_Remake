@@ -23,7 +23,7 @@ class PengadaanBarangViewController: UIViewController {
     var pengadaanBarangDataSegue: PengadaanBarangData?
     var pengadaanBarangManager = PengadaanBarangManager()
     
-    
+    var idPengadaan: Int = -1
     var supplierManager = SupplierManager()
     var dataSupplier: [SupplierData] = []
     var supplierValue = 0
@@ -73,6 +73,10 @@ class PengadaanBarangViewController: UIViewController {
     
     @IBAction func btnAdd(_ sender: Any)
     {
+        self.btnSave.setTitle("Save", for: .normal)
+        txtNamaRestock.text = ""
+        pickerSupplier.selectRow(0, inComponent: 0, animated: false)
+        
         if menuOut == false
         {
             top.constant = -360
@@ -89,11 +93,19 @@ class PengadaanBarangViewController: UIViewController {
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {self.view.layoutIfNeeded()}){ (animationComplete) in print("Animation Complete") }
     }
     
-    @IBAction func btnSave(_ sender: Any)
+    @IBAction func btnSave(_ sender: UIButton)
     {
-        if txtNamaRestock.text != ""
+        
+        if sender.currentTitle == "Save"
         {
-            pengadaanBarangManager.store_data(nama: txtNamaRestock.text!, idSupplier: supplierValue)
+            if txtNamaRestock.text != ""
+            {
+                pengadaanBarangManager.store_data(nama: txtNamaRestock.text!, idSupplier: supplierValue)
+            }
+        }
+        else
+        {
+            pengadaanBarangManager.edit_data(nama: txtNamaRestock.text!, idSupplier: supplierValue, id: idPengadaan)
         }
     }
     
@@ -216,13 +228,60 @@ extension PengadaanBarangViewController: UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-
+        
         let add = UIContextualAction(style: .normal, title: "Edit") { (action, view, completion ) in
-            print("add2 called, table is Editing \(tableView.isEditing)")
-            tableView.isEditing = false
-
+            
+            self.btnSave.setTitle("Edit", for: .normal)
+            self.top.constant = -360
+            self.bottom.constant = -360
+            self.menuOut = true
+            
+            
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {self.view.layoutIfNeeded()}){ (animationComplete) in print("Animation Complete") }
+            
+            var indexes = 0
+            
+            if self.isFiltering
+            {
+                self.idPengadaan = self.filteredPengadaanBarang[indexPath.row].idPengadaanBarang
+                self.txtNamaRestock.text = self.filteredPengadaanBarang[indexPath.row].namaPengadaan
+                
+                for item in self.dataSupplier
+                {
+                    if item.idSupplier == self.filteredPengadaanBarang[indexPath.row].idSupplier.idSupplier
+                    {
+                        break
+                    }
+                    
+                    indexes += 1
+                }
+                
+                self.pickerSupplier.selectRow(indexes, inComponent: 0, animated: false)
+            }
+            else
+            {
+                self.idPengadaan = self.dataPengadaanBarang[indexPath.row].idPengadaanBarang
+                
+                self.txtNamaRestock.text = self.dataPengadaanBarang [indexPath.row].namaPengadaan
+                
+                for item in self.dataSupplier
+                {
+                    if item.idSupplier == self.dataPengadaanBarang[indexPath.row].idSupplier.idSupplier
+                    {
+                        break
+                    }
+                    
+                    indexes += 1
+                }
+                
+                self.pickerSupplier.selectRow(indexes, inComponent: 0, animated: false)
+            }
+            
+            self.supplierValue = self.dataSupplier[indexes].idSupplier
+            self.pengadaanBarangTable.reloadData()
+            
         }
-
+        
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion ) in
             if self.isFiltering
             {
@@ -237,7 +296,7 @@ extension PengadaanBarangViewController: UITableViewDataSource
             
             self.pengadaanBarangTable.reloadData()
         }
-
+        
         let config = UISwipeActionsConfiguration(actions: [add, delete])
         return config
     }
@@ -303,8 +362,8 @@ extension PengadaanBarangViewController: SupplierManagerDelegate
         }
         
         DispatchQueue.main.async
-        {
-            self.pickerSupplier.reloadAllComponents()
+            {
+                self.pickerSupplier.reloadAllComponents()
         }
         
         supplierValue = dataSupplier[0].idSupplier
