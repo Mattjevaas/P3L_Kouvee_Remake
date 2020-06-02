@@ -27,6 +27,10 @@
 		849C6DF124628F01001E6BB8 /* Transaksi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C6DF024628F01001E6BB8 /* Transaksi.swift */; };
 		849C6DF324628F11001E6BB8 /* TransaksiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C6DF224628F11001E6BB8 /* TransaksiManager.swift */; };
 		849C6DF62462957C001E6BB8 /* TransaksiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C6DF52462957C001E6BB8 /* TransaksiViewController.swift */; };
+		849C6DF82462FA3B001E6BB8 /* RincianLayananViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C6DF72462FA3B001E6BB8 /* RincianLayananViewController.swift */; };
+		849C6DFA24631095001E6BB8 /* RincianPembelian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C6DF924631095001E6BB8 /* RincianPembelian.swift */; };
+		849C6DFC246310A8001E6BB8 /* RincianPembelianManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C6DFB246310A8001E6BB8 /* RincianPembelianManager.swift */; };
+		849C6E0024633A07001E6BB8 /* RincianProdukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C6DFF24633A07001E6BB8 /* RincianProdukViewController.swift */; };
 		84ED2EA4244EB8BC00C8A107 /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EA3244EB8BC00C8A107 /* Supplier.swift */; };
 		84ED2EA6244EB8F800C8A107 /* SupplierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EA5244EB8F800C8A107 /* SupplierManager.swift */; };
 		84ED2EA8244EBA8600C8A107 /* SupplierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED2EA7244EBA8600C8A107 /* SupplierViewController.swift */; };
@@ -88,6 +92,10 @@
 		849C6DF024628F01001E6BB8 /* Transaksi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaksi.swift; sourceTree = "<group>"; };
 		849C6DF224628F11001E6BB8 /* TransaksiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransaksiManager.swift; sourceTree = "<group>"; };
 		849C6DF52462957C001E6BB8 /* TransaksiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransaksiViewController.swift; sourceTree = "<group>"; };
+		849C6DF72462FA3B001E6BB8 /* RincianLayananViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RincianLayananViewController.swift; sourceTree = "<group>"; };
+		849C6DF924631095001E6BB8 /* RincianPembelian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RincianPembelian.swift; sourceTree = "<group>"; };
+		849C6DFB246310A8001E6BB8 /* RincianPembelianManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RincianPembelianManager.swift; sourceTree = "<group>"; };
+		849C6DFF24633A07001E6BB8 /* RincianProdukViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RincianProdukViewController.swift; sourceTree = "<group>"; };
 		84A7EC1E245F11AB00DD0059 /* P3L_Kouvee_Remake.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = P3L_Kouvee_Remake.entitlements; sourceTree = "<group>"; };
 		84ED2EA3244EB8BC00C8A107 /* Supplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supplier.swift; sourceTree = "<group>"; };
 		84ED2EA5244EB8F800C8A107 /* SupplierManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierManager.swift; sourceTree = "<group>"; };
@@ -250,6 +258,7 @@
 		849C6DEF24628EEA001E6BB8 /* Transaksi */ = {
 			isa = PBXGroup;
 			children = (
+				849C6DFE246310B3001E6BB8 /* RincianPembelian */,
 				849C6DF024628F01001E6BB8 /* Transaksi.swift */,
 				849C6DF224628F11001E6BB8 /* TransaksiManager.swift */,
 			);
@@ -260,8 +269,19 @@
 			isa = PBXGroup;
 			children = (
 				849C6DF52462957C001E6BB8 /* TransaksiViewController.swift */,
+				849C6DF72462FA3B001E6BB8 /* RincianLayananViewController.swift */,
+				849C6DFF24633A07001E6BB8 /* RincianProdukViewController.swift */,
 			);
 			path = Transaksi;
+			sourceTree = "<group>";
+		};
+		849C6DFE246310B3001E6BB8 /* RincianPembelian */ = {
+			isa = PBXGroup;
+			children = (
+				849C6DF924631095001E6BB8 /* RincianPembelian.swift */,
+				849C6DFB246310A8001E6BB8 /* RincianPembelianManager.swift */,
+			);
+			path = RincianPembelian;
 			sourceTree = "<group>";
 		};
 		84ED2EA0244EB86900C8A107 /* Customer */ = {
@@ -583,6 +603,7 @@
 				84FCCF7524589AD40099F3F4 /* PengadaanBarangDetailViewController.swift in Sources */,
 				84FCCF70245897B10099F3F4 /* RincianPengadaanManager.swift in Sources */,
 				842C0259244E062300CA2BF5 /* CustomerDetailViewController.swift in Sources */,
+				849C6DFC246310A8001E6BB8 /* RincianPembelianManager.swift in Sources */,
 				84FCCF5D2455BBB60099F3F4 /* HargaLayananManager.swift in Sources */,
 				84FCCF6E245897980099F3F4 /* PengadaanBarangManager.swift in Sources */,
 				842C0231244DC36800CA2BF5 /* LoginViewController.swift in Sources */,
@@ -600,12 +621,14 @@
 				842C022F244DC36800CA2BF5 /* SceneDelegate.swift in Sources */,
 				84ED2EB7244F2CA600C8A107 /* Hewan.swift in Sources */,
 				84FCCF692458975C0099F3F4 /* RincianPengadaan.swift in Sources */,
+				849C6DF82462FA3B001E6BB8 /* RincianLayananViewController.swift in Sources */,
 				84FCCF602455BD0E0099F3F4 /* ProdukLayananViewController.swift in Sources */,
 				84ED2ED6245071D700C8A107 /* ProdukBarangDetailViewController.swift in Sources */,
 				84ED2EC0244F39DF00C8A107 /* HewanDetailExtension.swift in Sources */,
 				84FCCF6B2458977C0099F3F4 /* PengadaanBarang.swift in Sources */,
 				849C6DF324628F11001E6BB8 /* TransaksiManager.swift in Sources */,
 				84FCCF642456BE5B0099F3F4 /* ProdukLayananExtension.swift in Sources */,
+				849C6DFA24631095001E6BB8 /* RincianPembelian.swift in Sources */,
 				84ED2EC5244F458E00C8A107 /* UkuranHewanDetailViewController.swift in Sources */,
 				84ED2EA8244EBA8600C8A107 /* SupplierViewController.swift in Sources */,
 				842C0252244DE02600CA2BF5 /* LoginManager.swift in Sources */,
@@ -616,6 +639,7 @@
 				84ED2EB9244F2CB300C8A107 /* HewanManager.swift in Sources */,
 				84ED2ECA244F4D7300C8A107 /* JenisHewanDetailViewController.swift in Sources */,
 				84ED2EC3244F457100C8A107 /* UkuranHewanViewController.swift in Sources */,
+				849C6E0024633A07001E6BB8 /* RincianProdukViewController.swift in Sources */,
 				842C0250244DDFF400CA2BF5 /* Login.swift in Sources */,
 				84FCCF73245899F10099F3F4 /* PengadaanBarangViewController.swift in Sources */,
 				84ED2ED02450719A00C8A107 /* ProdukBarangManager.swift in Sources */,

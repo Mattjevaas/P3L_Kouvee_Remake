@@ -64,22 +64,22 @@ class ProdukBarangViewController: UIViewController {
             {
                 if sortPrice == false
                 {
-                    filteredProdukBarang = filteredProdukBarang.sorted(by: {$0.hargaJual > $1.hargaJual })
+                    filteredProdukBarang = filteredProdukBarang.sorted(by: {Int($0.hargaJual)! > Int($1.hargaJual)! })
                 }
                 else
                 {
-                    filteredProdukBarang = filteredProdukBarang.sorted(by: {$0.hargaJual < $1.hargaJual })
+                    filteredProdukBarang = filteredProdukBarang.sorted(by: {Int($0.hargaJual)! < Int($1.hargaJual)! })
                 }
             }
             else
             {
                 if sortPrice == false
                 {
-                    dataProdukBarang = dataProdukBarang.sorted(by: {$0.hargaJual > $1.hargaJual })
+                    dataProdukBarang = dataProdukBarang.sorted(by: {Int($0.hargaJual)! > Int($1.hargaJual)! })
                 }
                 else
                 {
-                    dataProdukBarang = dataProdukBarang.sorted(by: {$0.hargaJual < $1.hargaJual })
+                    dataProdukBarang = dataProdukBarang.sorted(by: {Int($0.hargaJual)! < Int($1.hargaJual)! })
                 }
             }
             

@@ -184,6 +184,7 @@ struct ProdukBarangManager
             return produkBarangData
         }
         catch{
+            debugPrint(error)
             self.delegate?.didMessageProdukBarang(title: "Error", message: "Error Fetching Data !")
             return nil
         }

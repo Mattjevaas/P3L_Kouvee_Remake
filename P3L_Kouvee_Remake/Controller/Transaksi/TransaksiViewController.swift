@@ -25,6 +25,7 @@ class TransaksiViewController: UIViewController {
     var transaksiManager = TransaksiManager()
     var transaksiValue: Int = 0
     
+    var dataForSegue: TransaksiData? = nil
     var hewanValue: Int = 0
     var hewanData: [HewanData] = []
     var hewanManager = HewanManager()
@@ -425,7 +426,36 @@ extension TransaksiViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        dataForSegue = transaksiData[indexPath.row]
         
+        if transaksiData[indexPath.row].jenisTransaksi == "Layanan"
+        {
+            performSegue(withIdentifier: "toRincianLayanan", sender: self)
+        }
+        else
+        {
+            performSegue(withIdentifier: "toRincianProduk", sender: self)
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toRincianLayanan"
+        {
+            if let destinationVC = segue.destination as? RincianLayananViewController
+            {
+                destinationVC.transaksiData = dataForSegue
+            }
+        }
+        else
+        {
+            if let destinationVC = segue.destination as? RincianProdukViewController
+            {
+                destinationVC.transaksiData = dataForSegue
+            }
+        }
     }
 }
 

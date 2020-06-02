@@ -20,13 +20,25 @@ struct TransaksiData: Codable
     let totalBayar: String
     let tglTransaksi: String
     let jenisTransaksi: String
+    let statusSelesai: String?
     let statusLunas: String
     let idPegawai: String
     let idHewan: HewanData?
+    var listProduct: [RincianPembelianData]
 }
 
 struct TransaksiDataStore: Codable
 {
     let jenisTransaksi: String
     let idHewan: Int?
+}
+
+struct TransaksiSMS: Codable
+{
+    let api_key: String
+    let api_secret: String
+    let to: String
+    let from: String
+    let text: String
+    
 }
