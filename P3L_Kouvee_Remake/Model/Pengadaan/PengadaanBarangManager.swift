@@ -195,11 +195,12 @@ struct PengadaanBarangManager
     
     func simpanSurat(id: Int)
     {
+        let fileName = Constant.randomString(length: 10)
         let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]
         let urls = "\(url)/cekpdf/\(id)"
         let destination: DownloadRequest.Destination = { _, _ in
            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-           let fileURL = documentsURL.appendingPathComponent("suratPemesanan.pdf")
+           let fileURL = documentsURL.appendingPathComponent("\(fileName).pdf")
            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
         }
 
