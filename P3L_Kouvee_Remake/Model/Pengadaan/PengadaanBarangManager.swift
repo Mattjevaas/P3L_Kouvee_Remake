@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+
 protocol PengadaanBarangManagerDelegate
 {
     func didFetchPengadaanBarang(pengadaanBarang: PengadaanBarang)
@@ -189,6 +190,21 @@ struct PengadaanBarangManager
             {
                 self.delegate?.didMessagePengadaanBarang(title: "Error", message: "Network Error !")
             }
+        }
+    }
+    
+    func simpanSurat(id: Int)
+    {
+        let header: HTTPHeaders = [ "Authorization" : "Bearer \(Constant.APIKEY)" , "Accept": "application/json" ]
+        let urls = "\(url)/cekpdf/\(id)"
+        let destination: DownloadRequest.Destination = { _, _ in
+           let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+           let fileURL = documentsURL.appendingPathComponent("suratPemesanan.pdf")
+           return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+        }
+
+        AF.download(urls, headers: header, to: destination).response { response in
+            debugPrint(response)
         }
     }
     

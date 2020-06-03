@@ -168,6 +168,9 @@ extension TransaksiViewController: TransaksiManagerDelegate
             
         }
         
+        transaksiData = transaksiData.sorted(by: {$0.idTransaksiPembayaran > $1.idTransaksiPembayaran })
+        transaksiData = transaksiData.sorted(by: {$0.statusLunas < $1.statusLunas })
+        
         DispatchQueue.main.async {
             self.transaksiTable.reloadData()
         }

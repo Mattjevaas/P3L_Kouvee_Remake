@@ -125,6 +125,8 @@ class PengadaanBarangDetailViewController: UIViewController {
             sender.setTitle("Sudah Cetak", for: .normal)
             sender.backgroundColor = UIColor.green
             btnAddItem.isHidden = true
+            
+            pengadaanBarangManager.simpanSurat(id: pengadaanBarangData!.idPengadaanBarang)
         }
         
         if sender.currentTitle == "Belum Datang" && btnCetak.currentTitle == "Sudah Cetak"
